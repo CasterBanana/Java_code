@@ -11,4 +11,5 @@ public class Rectangle {
     public double area () { //создали функцию с двумя параметрами
         return this.a * this.b;
     }
+
 }

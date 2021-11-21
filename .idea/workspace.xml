@@ -75,10 +75,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Lesson1" />
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Lesson1_7">
+  <component name="RunManager" selected="Application.Prog1">
     <configuration name="Lesson1_7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.kruto.sandbox.Lesson1_7" />
       <module name="sandbox.main" />
