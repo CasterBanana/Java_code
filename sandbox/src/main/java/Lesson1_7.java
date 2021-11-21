@@ -1,4 +1,4 @@
-public class TestFunction {
+public class Lesson1_7 {
     public static void main(String[] args) {
         hello("Димоня");
         hello("Пепега");
