@@ -8,5 +8,7 @@ public class Rectangle {
         this.a = a;
         this.b = b;
     }
-
+    public double area () { //создали функцию с двумя параметрами
+        return this.a * this.b;
+    }
 }
