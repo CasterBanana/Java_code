@@ -1,8 +1,27 @@
 package Lesson1.Task2;
+import java.lang.Math.*;
+
+
 
 public class Point {
-    public static double distance(Point p1, Point p2){
+    public double x1;
+    public double y1;
+    public double x2;
+    public double y2;
 
+
+    public Point p1 (double x1, double y1){ // p1 - объект класса Point
+      this.x1 = x1;
+      this.y1 = y1;
+
+    }
+    public Point p2 (double x2, double y2){ // p1 - объект класса Point
+        this.x2 = x2;
+        this.y2 = y2;
+    }
+    public static double distance(Point p1, Point p2){
+        double distance =  Math.sqrt((p2.x2-p1.x1)*(p2.x2-p1.x1)+(p2.y2-p1.y1)*(p2.y2-p1.y1));
+        return distance;
 
     }
 

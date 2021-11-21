@@ -8,7 +8,7 @@ public class Lesson1_7 {
         //hello("Пепега");
         hello("world"); */
 
-        Square s = new Square(5);
+        Square s = new Square(5); // вызываем конструктор класса Square, s - объект класса, Square() - конструктор
         System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
 
         Rectangle r = new Rectangle(4, 6);
@@ -22,5 +22,5 @@ public class Lesson1_7 {
 
 
 
-}
+
 
