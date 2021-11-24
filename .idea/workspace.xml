@@ -68,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/sandbox/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Task2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -98,7 +98,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Lesson1_7" />
-        <item itemvalue="Application.Prog1" />
       </list>
     </recent_temporary>
   </component>
