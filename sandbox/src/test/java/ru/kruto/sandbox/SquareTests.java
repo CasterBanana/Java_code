@@ -8,8 +8,9 @@ public class SquareTests {
     public void testArea() { // у этого тестового метода нет никакого возвращаемого результата
         // и параметров, а результат сообщает тестовому фреймворку
         Square s = new Square(5);
-        assert s.area() == 24;
+        assert s.area() == 25;
         //Assert.assertEquals(s.area(),25);
+        Assert.assertNotEquals(s.area(),24);
 
     }
 }
