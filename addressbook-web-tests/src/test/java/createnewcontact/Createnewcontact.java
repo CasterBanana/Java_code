@@ -35,7 +35,7 @@ public class Createnewcontact {
   public void testCreateNewContact() throws Exception {
 
     initNewContact();
-    fillInfoContact();
+    fillInfoContact("Name", "Family", "88005553535", "omega_pepega@mail.com");
     submitCreateNewContact();
     wd.findElement(By.linkText("Logout")).click();
   }
@@ -44,19 +44,19 @@ public class Createnewcontact {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-  private void fillInfoContact() {
+  private void fillInfoContact(String firstName, String lastName, String mobilePhone, String eMail) {
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys("Name");
+    wd.findElement(By.name("firstname")).sendKeys(firstName);
     wd.findElement(By.name("lastname")).click();
     wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys("Family");
+    wd.findElement(By.name("lastname")).sendKeys(lastName);
     wd.findElement(By.name("mobile")).click();
     wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys("88005553535");
+    wd.findElement(By.name("mobile")).sendKeys(mobilePhone);
     wd.findElement(By.name("email")).click();
     wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys("omega_pepega@mail.com");
+    wd.findElement(By.name("email")).sendKeys(eMail);
   }
 
   private void initNewContact() {
