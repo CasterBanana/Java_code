@@ -72,6 +72,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.kruto.addressbook" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\RepositoryJava\Java_code\sandbox\src\main\java\Task2" />
     </key>
@@ -79,7 +82,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Createnewcontact (1)">
+  <component name="RunManager" selected="TestNG.GroupDeletionTests">
     <configuration name="Createnewcontact (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -131,16 +134,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PointTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
+    <configuration name="GroupDeletionTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.kruto.sandbox.*" />
+          <option name="PATTERN" value="ru.kruto.addressbook.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.sandbox" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.sandbox.PointTests" />
+      <option name="PACKAGE_NAME" value="ru.kruto.addressbook" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.GroupDeletionTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -166,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.GroupDeletionTests" />
         <item itemvalue="TestNG.Createnewcontact (1)" />
         <item itemvalue="TestNG.Createnewcontact" />
         <item itemvalue="TestNG.GroupCreationTests" />
         <item itemvalue="TestNG.ru.kruto.addressbook" />
-        <item itemvalue="TestNG.PointTests" />
       </list>
     </recent_temporary>
   </component>
