@@ -8,12 +8,12 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
 
   @Test
   public void testGroupCreation() throws Exception { // не стоит называть метод, как класс
-    app.gotoGroupPage();
-    app.initGroupCreation();
+    app.getNavigationHelper().gotoGroupPage();
+    app.getGroupHelper().initGroupCreation();
     //вызываем метод fillGroupForm и заполняем значения
-    app.fillGroupForm(new GroupData("test_recorder", "logo", "test"));
-    app.submitGroupCreation();
-    app.returnToGroupPage();
+    app.getGroupHelper().fillGroupForm(new GroupData("test_recorder", "logo", "test"));
+    app.getGroupHelper().submitGroupCreation();
+    app.getGroupHelper().returnToGroupPage();
     //app.stop();
   }
 
