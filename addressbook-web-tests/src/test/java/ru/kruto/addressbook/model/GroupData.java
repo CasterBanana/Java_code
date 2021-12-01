@@ -1,4 +1,4 @@
-package ru.kruto.addressbook;
+package ru.kruto.addressbook.model;
 
 public class GroupData {
     private final String groupName;
