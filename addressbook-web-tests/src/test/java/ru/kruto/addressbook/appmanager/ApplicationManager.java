@@ -24,8 +24,6 @@ public class ApplicationManager {
 
     }
 
-
-
     public void stop() {
         wd.quit();
     }
@@ -38,22 +36,5 @@ public class ApplicationManager {
         return navigationHelper;
     }
 
-    /*private boolean isElementPresent(By by) {
-      try {
-        wd.findElement(by);
-        return true;
-      } catch (NoSuchElementException e) {
-        return false;
-      }
-    }
-
-    private boolean isAlertPresent() {
-      try {
-        wd.switchTo().alert();
-        return true;
-      } catch (NoAlertPresentException e) {
-        return false;
-      }
-    } */
 
 }

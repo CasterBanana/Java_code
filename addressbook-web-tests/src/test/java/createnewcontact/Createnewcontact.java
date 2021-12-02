@@ -7,14 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Createnewcontact {
   private WebDriver wd;
-  private JavascriptExecutor js;
+
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
    // System.setProperty("webdriver.chrome.driver", "");
     wd = new ChromeDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    js = (JavascriptExecutor) wd;
     // авторизация
     wd.get("http://localhost/addressbook/");
     login("admin", "secret");
@@ -35,16 +34,21 @@ public class Createnewcontact {
   public void testCreateNewContact() throws Exception {
 
     initNewContact();
-    fillInfoContact(new ContactData("Name", "Family", "88005553535", "omega_pepega@mail.com"));
+    fillInfoContact(new ContactData("Name", "Family", "88005553535", "omega_pepega@mail.com")); //вызом метода и заполнение данными
     submitCreateNewContact();
-    wd.findElement(By.linkText("Logout")).click();
+    returnHomePage();
+    //wd.findElement(By.linkText("Logout")).click();
   }
 
-  private void submitCreateNewContact() {
+  private void returnHomePage() { //для открытия домашней страницы со списком контактов
+    wd.findElement(By.linkText("home page")).click();
+  }
+
+  private void submitCreateNewContact() { // подтвердить создание нового контакта
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-  private void fillInfoContact(ContactData contactData) {
+  private void fillInfoContact(ContactData contactData) { // заполнение данных контакта
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
     wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstName());
@@ -68,23 +72,7 @@ public class Createnewcontact {
     wd.quit();
   }
 
-  private boolean isElementPresent(By by) {
-    try {
-      wd.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
 
-  private boolean isAlertPresent() {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
 
 
 }
