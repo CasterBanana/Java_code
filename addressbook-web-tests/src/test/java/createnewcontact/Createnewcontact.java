@@ -1,11 +1,13 @@
 package createnewcontact;
 
 import java.util.concurrent.TimeUnit;
+
+import createnewcontact.model.ContactData;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Createnewcontact {
+public class CreateNewContact {
   private WebDriver wd;
 
 

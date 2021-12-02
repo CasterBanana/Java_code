@@ -83,8 +83,25 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupModificationTests">
-    <configuration name="Createnewcontact (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.EditingContact">
+    <configuration name="CreateNewContact" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="createnewcontact.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="createnewcontact" />
+      <option name="MAIN_CLASS_NAME" value="createnewcontact.CreateNewContact" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeleteContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -93,7 +110,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="createnewcontact" />
-      <option name="MAIN_CLASS_NAME" value="createnewcontact.Createnewcontact" />
+      <option name="MAIN_CLASS_NAME" value="createnewcontact.DeleteContact" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -101,16 +118,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Createnewcontact" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="EditingContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.TestSuite.*" />
+          <option name="PATTERN" value="createnewcontact.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.TestSuite" />
-      <option name="MAIN_CLASS_NAME" value="com.example.TestSuite.Createnewcontact" />
+      <option name="PACKAGE_NAME" value="createnewcontact" />
+      <option name="MAIN_CLASS_NAME" value="createnewcontact.EditingContact" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -128,23 +145,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook" />
       <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.GroupCreationTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GroupDeletionTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.kruto.addressbook.appmanager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.addressbook" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.GroupDeletionTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -171,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.EditingContact" />
+        <item itemvalue="TestNG.DeleteContact" />
+        <item itemvalue="TestNG.CreateNewContact" />
         <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="TestNG.GroupDeletionTests" />
-        <item itemvalue="TestNG.Createnewcontact (1)" />
-        <item itemvalue="TestNG.Createnewcontact" />
       </list>
     </recent_temporary>
   </component>
