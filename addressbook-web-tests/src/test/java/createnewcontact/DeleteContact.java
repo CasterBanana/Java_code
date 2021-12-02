@@ -1,10 +1,6 @@
 package createnewcontact;
 
-import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.*;
-
-import static org.testng.Assert.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,12 +14,12 @@ public class DeleteContact {
     public void setUp() throws Exception {
         wd = new ChromeDriver();
         wd.get("http://localhost/addressbook/");
+        login("admin", "secret");
 
     }
 
     @Test
     public void testGroupDeletionTests() throws Exception {
-        login();
         wd.findElement(By.xpath("//*[@id=\"7\"]")).click();
         wd.findElement(By.xpath("//input[@value='Delete']")).click();
         wd.switchTo().alert().accept();
@@ -31,11 +27,11 @@ public class DeleteContact {
 
     }
 
-    private void login() {
+    private void login(String login, String password) {
         wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys("admin");
+        wd.findElement(By.name("user")).sendKeys(login);
         wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys("secret");
+        wd.findElement(By.name("pass")).sendKeys(password);
         wd.findElement(By.id("LoginForm")).click();
         wd.findElement(By.id("LoginForm")).click();
         wd.findElement(By.xpath("//input[@value='Login']")).click();
