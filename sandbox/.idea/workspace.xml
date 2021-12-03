@@ -73,6 +73,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="createnewcontact.appmanager" />
       <recent name="createnewcontact" />
       <recent name="ru.kruto.addressbook.appmanager" />
       <recent name="ru.kruto.addressbook" />
@@ -94,7 +95,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="createnewcontact" />
-      <option name="MAIN_CLASS_NAME" value="createnewcontact.CreateNewContact" />
+      <option name="MAIN_CLASS_NAME" value="createnewcontact.tests.CreateNewContact" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -106,12 +107,12 @@
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="createnewcontact.*" />
+          <option name="PATTERN" value="createnewcontact.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="createnewcontact" />
-      <option name="MAIN_CLASS_NAME" value="createnewcontact.DeleteContact" />
+      <option name="MAIN_CLASS_NAME" value="createnewcontact.tests.DeleteContact" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -123,12 +124,12 @@
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="createnewcontact.*" />
+          <option name="PATTERN" value="createnewcontact.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="createnewcontact" />
-      <option name="MAIN_CLASS_NAME" value="createnewcontact.EditingContact" />
+      <option name="MAIN_CLASS_NAME" value="createnewcontact.tests.EditingContact" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
