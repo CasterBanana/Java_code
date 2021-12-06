@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationManager {
+public class ApplicationManager1 {
     public WebDriver wd;
 
     private homePage homePage;
@@ -72,7 +72,11 @@ public class ApplicationManager {
     }
 
     public void selectContact() {
-        wd.findElement(By.xpath("//*[@id=\"7\"]")).click(); // для выбора определённого контакта по чекбоксу
+        wd.findElement(By.xpath("//*[@id=\"9\"]")).click(); // для выбора определённого контакта по чекбоксу
+    }
+
+    public void returnHomePage() { //для открытия домашней страницы со списком контактов
+        wd.findElement(By.linkText("home page")).click();
     }
 
     public createnewcontact.appmanager.homePage getHomePage() {

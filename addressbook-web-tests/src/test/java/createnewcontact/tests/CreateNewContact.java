@@ -10,7 +10,7 @@ public class CreateNewContact extends TestBase {
   public void testCreateNewContact() throws Exception {
 
     app.initNewContact();
-    app.fillInfoContact(new ContactData("Name", "Family", "88005553535", "omega_pepega@mail.com")); //вызом метода и заполнение данными
+    app.fillInfoContact(new ContactData("Sergey", "Family", "88005553535", "omega_pepega@mail.com")); //вызом метода и заполнение данными
     app.submitCreateNewContact();
     app.getHomePage().returnHomePage();
     //wd.findElement(By.linkText("Logout")).click();
