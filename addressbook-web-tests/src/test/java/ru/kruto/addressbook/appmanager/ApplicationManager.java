@@ -1,12 +1,15 @@
 package ru.kruto.addressbook.appmanager;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    WebDriver wd;
+    //protected final ApplicationManager app = new ApplicationManager();
+    private ContactHelper contactHelper;
+    public WebDriver wd;
 
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
@@ -20,6 +23,7 @@ public class ApplicationManager {
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
+        contactHelper = new ContactHelper(wd);
         sessionHelper.login("admin", "secret");
 
     }
@@ -37,4 +41,11 @@ public class ApplicationManager {
     }
 
 
+    public void returnToHomePage() {
+        wd.findElement(By.linkText("home page")).click();
+    }
+
+    public ContactHelper getContactHelper() {
+        return contactHelper;
+    }
 }
