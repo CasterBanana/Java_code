@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.kruto.addressbook.model.ContactData;
 
-public class ContactHelper {
+public class ContactHelper extends HelperBase {
     private WebDriver wd;
 
     public ContactHelper(WebDriver wd) {
@@ -13,11 +13,11 @@ public class ContactHelper {
     }
 
     public void confirmNewContact() {
-        enterCreate(); // нижняя кнопка
+        enter(By.xpath("//div[@id='content']/form/input[21]")); // нижняя кнопка
     }
 
-    private void enterCreate() {
-        wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+    private void enter(By locator) {
+        wd.findElement(locator).click();
     }
 
     public void fillInfoNewContact(ContactData contactData) { //
@@ -28,7 +28,7 @@ public class ContactHelper {
     }
 
     private void fillInformContact(By firstname, String text) {
-        wd.findElement(firstname).click();
+        enter(firstname);
         wd.findElement(firstname).clear();
         wd.findElement(firstname).sendKeys(text);
     }
@@ -49,27 +49,27 @@ public class ContactHelper {
     } */
 
     public void initializationNewContact() {
-        wd.findElement(By.linkText("add new")).click();
+        enter(By.linkText("add new"));
     }
 
     public void safeUpdateContact() {
-        wd.findElement(By.name("update")).click();
+        enter(By.name("update"));
     }
 
     public void editContact(String editFamily) {
         fillInformContact(By.name("lastname"), editFamily);
     }
 
-    public void initializationEditContact() {
-        wd.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img")).click();
+    public void initializationEditContact() { // для редактирования контакта
+        enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img"));
     }
 
-    public void selectContact() {
-        wd.findElement(By.xpath("//*[@id=\"9\"]")).click(); // для выбора определённого контакта по чекбоксу
+    public void selectContact() { // выбора чекбокса на странице контактов
+        enter(By.xpath("//*[@id=\"9\"]"));
     }
 
     public void deleteContact() { //для удаления контакта
-        wd.findElement(By.xpath("//input[@value='Delete']")).click();
+        enter(By.xpath("//input[@value='Delete']"));
     }
 
     public void getAcceptContact() { // подтверждение для всплыващющего окна
@@ -77,6 +77,6 @@ public class ContactHelper {
     }
 
     public void openHome() { // открытие главной страницы
-        wd.findElement(By.linkText("home")).click();
+        enter(By.linkText("home"));
     }
 }
