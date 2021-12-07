@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import ru.kruto.addressbook.model.ContactData;
 
 public class ContactHelper extends HelperBase {
-    private WebDriver wd;
 
     public ContactHelper(WebDriver wd) {
-        this.wd = wd;
+
+        super(wd);
 
     }
 
@@ -16,21 +16,11 @@ public class ContactHelper extends HelperBase {
         enter(By.xpath("//div[@id='content']/form/input[21]")); // нижняя кнопка
     }
 
-    private void enter(By locator) {
-        wd.findElement(locator).click();
-    }
-
     public void fillInfoNewContact(ContactData contactData) { //
         fillInformContact(By.name("firstname"), contactData.getFirstName());
         fillInformContact(By.name("lastname"), contactData.getLastName());
         fillInformContact(By.name("mobile"), contactData.geteMail());
         fillInformContact(By.name("email"), contactData.getMobilePhone());
-    }
-
-    private void fillInformContact(By firstname, String text) {
-        enter(firstname);
-        wd.findElement(firstname).clear();
-        wd.findElement(firstname).sendKeys(text);
     }
 
     /*public void fillInfoNewContact(String name, String family, String email, String phoneNumber) {

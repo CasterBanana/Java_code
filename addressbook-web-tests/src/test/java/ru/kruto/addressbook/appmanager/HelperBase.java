@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class HelperBase {
     protected WebDriver wd;
 
+
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
@@ -20,4 +21,13 @@ public class HelperBase {
         wd.findElement(locator).sendKeys(text);
     }
 
+    protected void enter(By locator) {
+        wd.findElement(locator).click();
+    }
+
+    protected void fillInformContact(By firstname, String text) {
+        enter(firstname);
+        wd.findElement(firstname).clear();
+        wd.findElement(firstname).sendKeys(text);
+    }
 }
