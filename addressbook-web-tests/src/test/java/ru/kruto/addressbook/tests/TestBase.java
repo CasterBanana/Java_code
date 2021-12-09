@@ -1,5 +1,6 @@
 package ru.kruto.addressbook.tests;
 
+import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.kruto.addressbook.appmanager.ApplicationManager;
@@ -7,7 +8,7 @@ import ru.kruto.addressbook.appmanager.ApplicationManager;
 
 
 public class TestBase {
-    protected final ApplicationManager app = new ApplicationManager(); // базовый класс
+    protected final ApplicationManager app = new ApplicationManager(Browser.FIREFOX); // базовый класс
 
 
     @BeforeMethod(alwaysRun = true) //фикстура до метода

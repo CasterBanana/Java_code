@@ -11,7 +11,7 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
     app.getNavigationHelper().gotoGroupPage();
     app.getGroupHelper().initGroupCreation();
     //вызываем метод fillGroupForm и заполняем значения
-    app.getGroupHelper().fillGroupForm(new GroupData("test_recorder", "logo", "test"));
+    app.getGroupHelper().fillGroupForm(new GroupData("Firefox", "logo", "test"));
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnToGroupPage();
     //app.stop();

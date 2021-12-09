@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
@@ -17,17 +18,22 @@ public class ApplicationManager {
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper; // тут код взаимодействия с тестируемой системой
+    private Browser browser;
+
+    public ApplicationManager(Browser browser) {
+
+        this.browser = browser;
+    }
 
     public void init() {
-        String browser = BrowserType.CHROME;
-        if (browser == BrowserType.CHROME){
+        if (browser == Browser.CHROME){
             wd = new ChromeDriver();
-        } else if(browser == BrowserType.FIREFOX ){
+        } else if(browser == Browser.FIREFOX ){
             wd = new FirefoxDriver();
-        } else if (browser == BrowserType.IE){
+        } else if (browser == Browser.IE){
             wd = new InternetExplorerDriver();
         }
-        wd = new ChromeDriver();
+        //wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
         groupHelper = new GroupHelper(wd);
