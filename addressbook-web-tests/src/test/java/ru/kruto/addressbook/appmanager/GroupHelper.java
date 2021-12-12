@@ -43,4 +43,20 @@ public class GroupHelper extends HelperBase {
     public void submitGroupModification() {
         click(By.name("update"));
     }
+
+    public void createGroup(GroupData group) { // штучка для того, если для удаления нет группы никакой
+        initGroupCreation();
+        //вызываем метод fillGroupForm и заполняем значения
+        fillGroupForm(group);
+        submitGroupCreation();
+        returnToGroupPage();
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent (By.name("selected[]"));
+    }
+
+    private boolean isElementPresent(By name) {
+        return false;
+    }
 }

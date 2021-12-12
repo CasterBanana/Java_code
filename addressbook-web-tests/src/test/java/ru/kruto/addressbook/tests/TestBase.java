@@ -8,7 +8,7 @@ import ru.kruto.addressbook.appmanager.ApplicationManager;
 
 
 public class TestBase {
-    protected final ApplicationManager app = new ApplicationManager(Browser.FIREFOX); // базовый класс
+    protected final ApplicationManager app = new ApplicationManager(Browser.CHROME); // базовый класс
 
 
     @BeforeMethod(alwaysRun = true) //фикстура до метода

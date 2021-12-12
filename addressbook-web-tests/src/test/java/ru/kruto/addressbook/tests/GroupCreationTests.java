@@ -9,12 +9,13 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
   @Test
   public void testGroupCreation() throws Exception { // не стоит называть метод, как класс
     app.getNavigationHelper().gotoGroupPage();
-    app.getGroupHelper().initGroupCreation();
+    app.getGroupHelper().createGroup(new GroupData("Firefox", "logo", "test"));//это из GroupHelper теперь
+    /*app.getGroupHelper().initGroupCreation(); // на всякий случай оставлю старый вариант, когда в тесте описывались шаги
     //вызываем метод fillGroupForm и заполняем значения
     app.getGroupHelper().fillGroupForm(new GroupData("Firefox", "logo", "test"));
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnToGroupPage();
-    //app.stop();
+    //app.stop();*/
   }
 
 }
