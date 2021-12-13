@@ -51,11 +51,11 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initializationEditContact() { // для редактирования контакта
-        enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img"));
+        enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
     }
 
     public void selectContact() { // выбора чекбокса на странице контактов
-        enter(By.xpath("//*[@id=\"9\"]"));
+        enter(By.name("selected[]"));
     }
 
     public void deleteContact() { //для удаления контакта
@@ -68,5 +68,13 @@ public class ContactHelper extends HelperBase {
 
     public void openHome() { // открытие главной страницы
         enter(By.linkText("home"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img"));
+    }
+
+    private boolean isElementPresent(By xpath) {
+        return false;
     }
 }
