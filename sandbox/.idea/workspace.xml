@@ -90,6 +90,23 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.DeleteContact">
+    <configuration name="CreateNewContact" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.CreateNewContact" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DeleteContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -117,23 +134,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.EditingContact" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GroupCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.GroupCreationTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -179,9 +179,9 @@
       <list>
         <item itemvalue="TestNG.DeleteContact" />
         <item itemvalue="TestNG.EditingContact (1)" />
+        <item itemvalue="TestNG.CreateNewContact" />
         <item itemvalue="TestNG.GroupModificationTests" />
         <item itemvalue="TestNG.GroupDeletionTests" />
-        <item itemvalue="TestNG.GroupCreationTests" />
       </list>
     </recent_temporary>
   </component>
