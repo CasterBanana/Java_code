@@ -73,6 +73,7 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContact() {
         //return isElementPresent(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img"));
         return isElementPresent(By.xpath("img[@alt='Edit']"));
+        ////img[@alt='Edit'] определял через консоль разработчика
     }
 
     private boolean isElementPresent(By xpath) {
