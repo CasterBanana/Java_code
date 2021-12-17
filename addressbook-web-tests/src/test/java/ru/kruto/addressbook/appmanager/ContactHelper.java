@@ -80,7 +80,7 @@ public class ContactHelper extends HelperBase {
         return false;
     }
 
-    public boolean isThereAContactCheckBox() {
+    public boolean isThereAContactCheckBox() { // оставлю для чего-нибудь
         return isElementPresent(By.xpath("//img[@alt='Edit']"));
 
     }

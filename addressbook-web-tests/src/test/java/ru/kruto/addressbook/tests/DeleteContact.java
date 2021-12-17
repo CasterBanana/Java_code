@@ -8,7 +8,7 @@ public class DeleteContact extends TestBase {
 
     @Test
     public void testDeleteContact() throws Exception {
-        if (! app.getContactHelper().isThereAContactCheckBox()){
+        if (! app.getContactHelper().isThereAContact()){
             app.getContactHelper().initializationNewContact();
             app.getContactHelper().fillInfoNewContact(new ContactData("PepВЫВ1ega", "Kek", "88005553535", "omega_pepega@mail.com"));
             app.getContactHelper().confirmNewContact();
