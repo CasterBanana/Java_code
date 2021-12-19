@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.kruto.addressbook.model.ContactData;
 
+import java.util.List;
 
 
 public class CreateNewContact extends TestBase {
@@ -11,13 +12,13 @@ public class CreateNewContact extends TestBase {
 
     @Test
     public void testCreatenewcontact() throws Exception {
-        int before = app.getContactHelper().getContactCount();
+        List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initializationNewContact();
-        app.getContactHelper().fillInfoNewContact(new ContactData("PepВЫВ1ega", "Kek", "88005553535", "omega_pepega@mail.com"));
+        app.getContactHelper().fillInfoNewContact(new ContactData("PepВЫВ1ega", null, null, null));
         app.getContactHelper().confirmNewContact();
         app.returnToHomePage();
-        int after = app.getContactHelper().getContactCount();
-        Assert.assertEquals(after,before + 1);
+        List<ContactData> after = app.getContactHelper().getContactList();
+        Assert.assertEquals(after.size(),before.size() + 1);
 
     }
 

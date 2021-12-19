@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.kruto.addressbook.model.ContactData;
 
+import java.util.List;
+
 public class DeleteContact extends TestBase {
 
 
@@ -16,13 +18,17 @@ public class DeleteContact extends TestBase {
             app.getContactHelper().confirmNewContact();
             app.returnToHomePage();
         }
-        int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().selectContact();
+        List<ContactData> before = app.getContactHelper().getContactList();
+        app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().deleteContact();
         app.getContactHelper().getAcceptContact(); // подтверждение для всплыващющего окна
         app.getContactHelper().openHome();
-        int after = app.getContactHelper().getContactCount();
-        Assert.assertEquals(after,before - 1);
+        List<ContactData> after = app.getContactHelper().getContactList();
+        Assert.assertEquals(after.size(),before.size() - 1);
+
+        before.remove(before.size() - 1);
+        Assert.assertEquals(before, after);
+
     }
 
 

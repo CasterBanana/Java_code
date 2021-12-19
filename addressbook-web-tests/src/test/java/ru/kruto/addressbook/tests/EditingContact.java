@@ -3,6 +3,9 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.kruto.addressbook.model.ContactData;
 
+import java.util.HashSet;
+import java.util.List;
+
 
 public class EditingContact extends TestBase {
 
@@ -15,13 +18,18 @@ public class EditingContact extends TestBase {
             app.getContactHelper().confirmNewContact();
             app.returnToHomePage();
         }
-        int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().initializationEditContact();
-        app.getContactHelper().editContact("Oleg12");
+        List<ContactData> before = app.getContactHelper().getContactList();
+        app.getContactHelper().initializationEditContact(before.size() - 1);
+        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Oleg12");
+        app.getContactHelper().editContact(contact);
         app.getContactHelper().safeUpdateContact();
         app.returnToHomePage();
-        int after = app.getContactHelper().getContactCount();
-        Assert.assertEquals(after,before);
+        List<ContactData> after = app.getContactHelper().getContactList();
+        Assert.assertEquals(after.size(),before.size());
+
+        before.remove(before.size() - 1);
+        before.add(contact);
+        Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));
     }
 
 
