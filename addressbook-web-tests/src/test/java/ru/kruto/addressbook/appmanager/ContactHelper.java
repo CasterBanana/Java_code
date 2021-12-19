@@ -72,7 +72,7 @@ public class ContactHelper extends HelperBase {
 
     public boolean isThereAContact() {
         //return isElementPresent(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img"));
-        return isElementPresent(By.name("selected[]"));
+        return isElementPresent(By.xpath("img[@alt='Edit']"));
         ////img[@alt='Edit'] определял через консоль разработчика
     }
 
@@ -83,5 +83,9 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContactCheckBox() { // оставлю для чего-нибудь
         return isElementPresent(By.xpath("//img[@alt='Edit']"));
 
+    }
+
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
     }
 }
