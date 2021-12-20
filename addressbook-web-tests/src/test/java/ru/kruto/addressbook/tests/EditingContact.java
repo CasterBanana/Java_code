@@ -14,13 +14,13 @@ public class EditingContact extends TestBase {
     public void testEditContact() throws Exception { // что-то неправильно отрабатывает предусловие
         if ( app.getContactHelper().isThereAContact()){
             app.getContactHelper().initializationNewContact();
-            app.getContactHelper().fillInfoNewContact(new ContactData("PepВЫВ1ega", "Kek", "88005553535", "omega_pepega@mail.com"));
+            app.getContactHelper().fillInfoNewContact(new ContactData("Раз", "Kek", "88005553535", "omega_pepega@mail.com"));
             app.getContactHelper().confirmNewContact();
             app.returnToHomePage();
         }
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initializationEditContact(before.size() - 1);
-        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Oleg12");
+        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Oleg", null, null, null);
         app.getContactHelper().editContact(contact);
         app.getContactHelper().safeUpdateContact();
         app.returnToHomePage();
@@ -29,6 +29,7 @@ public class EditingContact extends TestBase {
 
         before.remove(before.size() - 1);
         before.add(contact);
+
         Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));
     }
 

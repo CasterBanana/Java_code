@@ -50,9 +50,15 @@ public class ContactHelper extends HelperBase {
         enter(By.name("update"));
     }
 
-    public void editContact(String editFamily) {
-        fillInformContact(By.name("lastname"), editFamily);
+    public void editContact(ContactData contactData) {
+        type(By.name("lastname"), contactData.getLastName());
+        //fillInformContact(By.name("lastname"), editFamily);
     }
+
+
+    /*public void editContact(String editFamily) {
+        fillInformContact(By.name("lastname"), editFamily);
+    }*/
 
     public void initializationEditContact(int index) { // для редактирования контакта
         //enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
@@ -101,7 +107,7 @@ public class ContactHelper extends HelperBase {
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name = 'entry']"));
         for (WebElement element : elements){
             String name = element.getText();
-            String id = element.findElement(By.tagName("input")).getAttribute("value");
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             ContactData contact = new ContactData(id, name,null,null,null);
             contacts.add(contact);
         }
