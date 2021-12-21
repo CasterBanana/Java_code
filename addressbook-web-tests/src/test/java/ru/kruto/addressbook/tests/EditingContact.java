@@ -20,15 +20,15 @@ public class EditingContact extends TestBase {
         }
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initializationEditContact(before.size() - 1);
-        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Oleg", null, null, null);
+        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Oleg", "Arr", "1231", "email");
         app.getContactHelper().editContact(contact);
         app.getContactHelper().safeUpdateContact();
         app.returnToHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(),before.size());
 
-        before.remove(before.size() - 1);
-        before.add(contact);
+       before.remove(before.size() - 1);
+       before.add(contact);
 
         Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));
     }
