@@ -62,8 +62,9 @@ public class ContactHelper extends HelperBase {
 
     public void initializationEditContact(int index) { // для редактирования контакта
         //enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
-        wd.findElements(By.xpath("img[@alt='Edit']")).get(index).click();
-       // enter (By.xpath("img[@alt='Edit']")); // оставлю, если не будет работать выше
+        wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+        // wd.findElements(By.xpath("img[@alt='Edit']")).get(index).click();
+        //enter (By.xpath("img[@alt='Edit']")); // оставлю, если не будет работать выше
     }
 
     public void selectContact(int index) { // выбора чекбокса на странице контактов
@@ -85,7 +86,7 @@ public class ContactHelper extends HelperBase {
 
     public boolean isThereAContact() {
         //return isElementPresent(By.xpath("//*[@id=\"maintable\"]/tbody/tr[7]/td[8]/a/img"));
-        return isElementPresent(By.xpath("img[@alt='Edit']"));
+        return isElementPresent(By.xpath("//img[@alt='Edit']"));
         ////img[@alt='Edit'] определял через консоль разработчика
     }
 

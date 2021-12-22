@@ -21,10 +21,12 @@ public class ContactData {
         return id;
     }
 
-
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public ContactData(String firstName, String lastName, String mobilePhone, String eMail) {
-        this.id = 0;
+        this.id =  Integer.MAX_VALUE;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobilePhone = mobilePhone;
@@ -74,5 +76,6 @@ public class ContactData {
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         return result;
     }
+
 
 }
