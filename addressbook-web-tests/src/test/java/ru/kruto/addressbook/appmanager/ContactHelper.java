@@ -52,6 +52,9 @@ public class ContactHelper extends HelperBase {
 
     public void editContact(ContactData contactData) {
         type(By.name("lastname"), contactData.getLastName());
+        type(By.name("firstname"), contactData.getFirstName());
+        type(By.name("email"), contactData.geteMail());
+        type(By.name("mobile"), contactData.getMobilePhone());
         //fillInformContact(By.name("lastname"), editFamily);
     }
 
@@ -107,9 +110,16 @@ public class ContactHelper extends HelperBase {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name = 'entry']"));
         for (WebElement element : elements){
-            String name = element.getText();
+            //String firstName = element.getText();
+            List<WebElement> tds = element.findElements(By.xpath(".//td"));
+            String firstName = tds.get(2).getText();
+            String lastName = tds.get(1).getText();
+            //String firstName = element.findElement(By.xpath("//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactData contact = new ContactData(id, name,null,null,null);
+            //String lastName = element.findElement(By.xpath("//td[2]")).getText();
+            String mobilePhone = element.findElement(By.xpath("//td[6]")).getText();
+            String eMail = element.findElement(By.tagName("a")).getText();
+            ContactData contact = new ContactData(id, firstName,lastName,mobilePhone,eMail);
             contacts.add(contact);
         }
         return  contacts;

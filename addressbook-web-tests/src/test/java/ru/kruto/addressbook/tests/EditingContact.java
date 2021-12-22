@@ -1,4 +1,5 @@
 package ru.kruto.addressbook.tests;
+import org.openqa.selenium.devtools.v85.browser.Browser;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.kruto.addressbook.model.ContactData;
@@ -12,7 +13,7 @@ public class EditingContact extends TestBase {
 
     @Test
     public void testEditContact() throws Exception { // что-то неправильно отрабатывает предусловие
-        if (! app.getContactHelper().isThereAContact()){
+        if ( app.getContactHelper().isThereAContact()){
             app.getContactHelper().initializationNewContact();
             app.getContactHelper().fillInfoNewContact(new ContactData("Раз", "Kek", "88005553535", "omega_pepega@mail.com"));
             app.getContactHelper().confirmNewContact();
@@ -20,17 +21,16 @@ public class EditingContact extends TestBase {
         }
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initializationEditContact(before.size() - 1);
-        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Oleg", "Arr", "1231", "email");
+        ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"omg", "мнеплохояхочуболи", "omg", "omg");
         app.getContactHelper().editContact(contact);
         app.getContactHelper().safeUpdateContact();
         app.returnToHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(),before.size());
+        before.remove(before.size() - 1);
+        before.add(contact);
 
-       before.remove(before.size() - 1);
-       before.add(contact);
-
-        Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));
+        Assert.assertEquals(new HashSet<>(after), new HashSet<>(before));
     }
 
 
