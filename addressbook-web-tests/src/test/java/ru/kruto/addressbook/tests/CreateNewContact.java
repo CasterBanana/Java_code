@@ -13,7 +13,7 @@ import java.util.List;
 public class CreateNewContact extends TestBase {
 
 
-    @Test
+    @Test (enabled = false)
     public void testCreatenewcontact() throws Exception {
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initializationNewContact();
