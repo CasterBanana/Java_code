@@ -1,28 +1,12 @@
 package ru.kruto.addressbook.model;
 
 public class GroupData {
-    private int id;
-    private final String groupName;
-    private final String groupHeader;
-    private final String groupFooter;
+    private int id = Integer.MAX_VALUE;
+    private  String groupName;
+    private  String groupHeader;
+    private  String groupFooter;
 
 
-
-
-    public GroupData(String groupName, String groupHeader, String groupFooter) { //конструктор
-        this.id = Integer.MAX_VALUE;
-        this.groupName = groupName;
-        this.groupHeader = groupHeader;
-        this.groupFooter = groupFooter;
-    }
-
-    public GroupData(int id, String groupName, String groupHeader, String groupFooter) { //конструктор
-        this.id = id;
-        this.groupName = groupName;
-        this.groupHeader = groupHeader;
-        this.groupFooter = groupFooter;
-    }
-        //методы для возвращения полей
     public String getGroupName() {
         return groupName;
     }
@@ -31,8 +15,26 @@ public class GroupData {
         return id;
     }
 
-    public void setId(int id) {
+    public GroupData withId(int id) {
         this.id = id;
+        return this;
+    }
+
+
+
+    public GroupData withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    public GroupData withGroupHeader(String groupHeader) {
+        this.groupHeader = groupHeader;
+        return this;
+    }
+
+    public GroupData withGroupFooter(String groupFooter) {
+        this.groupFooter = groupFooter;
+        return this;
     }
 
 
@@ -61,12 +63,15 @@ public class GroupData {
 
         GroupData groupData = (GroupData) o;
 
+        if (id != groupData.id) return false;
         return groupName != null ? groupName.equals(groupData.groupName) : groupData.groupName == null;
     }
 
     @Override
     public int hashCode() {
-        return groupName != null ? groupName.hashCode() : 0;
+        int result = id;
+        result = 31 * result + (groupName != null ? groupName.hashCode() : 0);
+        return result;
     }
 
 }

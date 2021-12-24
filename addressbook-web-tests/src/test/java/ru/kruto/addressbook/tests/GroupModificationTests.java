@@ -13,15 +13,16 @@ public class GroupModificationTests extends TestBase {
      public  void ensurePreconditions(){
         app.goTo().groupPage();
         if (app.group().list().size() == 0) {
-            app.group().create(new GroupData("Test1", null, null));
+            app.group().create(new GroupData().withGroupName("test3"));
         }
     }
 
     @Test
     public void testGroupModification() {
         List<GroupData> before = app.group().list();
-        GroupData group = new GroupData(before.get(before.size() - 1).getId(),"Test1", "Test2", "Test3");
         int index = before.size() - 1;
+        GroupData group = new GroupData()
+                .withId(before.get(index).getId()).withGroupName("Test1").withGroupHeader("Test2").withGroupFooter("Test3");
         app.group().modify(group, index);
         List<GroupData> after = app.group().list();
         Assert.assertEquals(after.size(),before.size());
