@@ -13,7 +13,7 @@ import java.util.List;
 public class EditingContact extends TestBase {
 
 
-    @Test (enabled = false)
+    @Test (enabled = true)
     public void testEditContact() throws Exception { // что-то неправильно отрабатывает предусловие
         if ( app.getContactHelper().isThereAContact()){
             app.getContactHelper().initializationNewContact();

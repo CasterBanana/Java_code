@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.kruto.addressbook.model.ContactData;
+import org.openqa.selenium.NoSuchElementException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +95,12 @@ public class ContactHelper extends HelperBase {
     }
 
     private boolean isElementPresent(By xpath) {
-        return false;
+        try {
+            wd.findElement(xpath);
+            return true;
+        } catch (NoSuchElementException ex) {
+            return false;
+        }
     }
 
     public boolean isThereAContactCheckBox() { // оставлю для чего-нибудь

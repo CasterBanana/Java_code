@@ -9,7 +9,7 @@ import java.util.List;
 public class DeleteContact extends TestBase {
 
 
-    @Test (enabled = false)
+    @Test (enabled = true)
     public void testDeleteContact() throws Exception {
         //int before = app.getContactHelper().getContactCount();
         if (! app.getContactHelper().isThereAContact()){
