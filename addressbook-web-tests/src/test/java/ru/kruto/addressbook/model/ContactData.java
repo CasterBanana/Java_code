@@ -2,11 +2,60 @@ package ru.kruto.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-    private int id;
-    private final String firstName;
-    private final String lastName;
-    private final String mobilePhone;
-    private final String eMail;
+    private int id = Integer.MAX_VALUE;;
+    private String firstName;
+    private String lastName;
+    private String mobilePhone;
+    private String eMail;
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public ContactData withId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public ContactData withFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public ContactData withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ContactData withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public ContactData witheMail(String eMail) {
+        this.eMail = eMail;
+        return this;
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public String geteMail() {
+        return eMail;
+    }
+
 
     @Override
     public String toString() {
@@ -35,45 +84,7 @@ public class ContactData {
         return result;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public ContactData(String firstName, String lastName, String mobilePhone, String eMail) {
-        this.id =  Integer.MAX_VALUE;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobilePhone = mobilePhone;
-        this.eMail = eMail;
-    }
-
-    public ContactData(int id, String firstName, String lastName, String mobilePhone, String eMail) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobilePhone = mobilePhone;
-        this.eMail = eMail;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public String geteMail() {
-        return eMail;
-    }
 
 
 }

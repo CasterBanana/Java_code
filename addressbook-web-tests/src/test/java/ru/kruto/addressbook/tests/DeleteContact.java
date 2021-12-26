@@ -8,28 +8,29 @@ import java.util.List;
 
 public class DeleteContact extends TestBase {
 
+    @BeforeTest
+    public  void ensurePreconditions(){
+        if (app.contact().list().size() == 0){
+            ContactData contact = new ContactData().withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");
+            app.contact().create(contact);
+        }
+    }
+
 
     @Test (enabled = true)
     public void testDeleteContact() throws Exception {
-        //int before = app.getContactHelper().getContactCount();
-        if (! app.getContactHelper().isThereAContact()){
-            app.getContactHelper().initializationNewContact();
-            app.getContactHelper().fillInfoNewContact(new ContactData("PepВЫВ1ega", "Kek", "88005553535", "omega_pepega@mail.com"));
-            app.getContactHelper().confirmNewContact();
-            app.returnToHomePage();
-        }
-        List<ContactData> before = app.getContactHelper().getContactList();
-        app.getContactHelper().selectContact(before.size() - 1);
-        app.getContactHelper().deleteContact();
-        app.getContactHelper().getAcceptContact(); // подтверждение для всплыващющего окна
-        app.getContactHelper().openHome();
-        List<ContactData> after = app.getContactHelper().getContactList();
-        Assert.assertEquals(after.size(),before.size() - 1);
+        List<ContactData> before = app.contact().list();
+        int index = before.size() - 1 ;
+        app.contact().delete(index);
+        List<ContactData> after = app.contact().list();
+        Assert.assertEquals(after.size(),index);
 
-        before.remove(before.size() - 1);
+        before.remove(index);
         Assert.assertEquals(before, after);
 
     }
+
+
 
 
 }

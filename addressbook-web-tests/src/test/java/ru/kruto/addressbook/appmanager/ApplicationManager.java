@@ -61,7 +61,7 @@ public class ApplicationManager {
         wd.findElement(By.linkText("home page")).click();
     }
 
-    public ContactHelper getContactHelper() {
+    public ContactHelper contact() {
         return contactHelper;
     }
 }

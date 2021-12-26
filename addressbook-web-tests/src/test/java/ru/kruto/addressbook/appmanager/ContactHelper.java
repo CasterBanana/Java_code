@@ -47,6 +47,32 @@ public class ContactHelper extends HelperBase {
         enter(By.linkText("add new"));
     }
 
+    public void create(ContactData contact) {
+        initializationNewContact();
+        fillInfoNewContact(contact);
+        confirmNewContact();
+        returnToHomePage();
+    }
+
+    public void mofify(int index, ContactData contact) {
+        initializationEditContact(index);
+        editContact(contact);
+        safeUpdateContact();
+        returnToHomePage();
+    }
+
+    public void delete(int index) {
+        selectContact(index);
+        deleteButton();
+        getAcceptContact(); // подтверждение для всплыващющего окна
+        openHome();
+    }
+
+
+    public void returnToHomePage() {
+        wd.findElement(By.linkText("home page")).click();
+    }
+
     public void safeUpdateContact() {
         enter(By.name("update"));
     }
@@ -76,7 +102,7 @@ public class ContactHelper extends HelperBase {
         //enter(By.name("selected[]")); // оставлю на всякий тоже
     }
 
-    public void deleteContact() { //для удаления контакта
+    public void deleteButton() { //для удаления контакта
         enter(By.xpath("//input[@value='Delete']"));
     }
 
@@ -112,7 +138,7 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name = 'entry']"));
         for (WebElement element : elements){
@@ -125,8 +151,7 @@ public class ContactHelper extends HelperBase {
             //String lastName = element.findElement(By.xpath("//td[2]")).getText();
             String mobilePhone = element.findElement(By.xpath("//td[6]")).getText();
             String eMail = element.findElement(By.tagName("a")).getText();
-            ContactData contact = new ContactData(id, firstName,lastName,mobilePhone,eMail);
-            contacts.add(contact);
+            contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName).withMobilePhone(mobilePhone).witheMail(eMail));
         }
         return  contacts;
     }
