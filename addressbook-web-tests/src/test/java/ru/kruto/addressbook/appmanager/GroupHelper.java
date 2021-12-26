@@ -8,6 +8,7 @@ import ru.kruto.addressbook.model.GroupData;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 

@@ -15,7 +15,7 @@ public class EditingContact extends TestBase {
 
     @Test (enabled = true)
     public void testEditContact() throws Exception { // что-то неправильно отрабатывает предусловие
-        if ( app.getContactHelper().isThereAContact()){
+        if (! app.getContactHelper().isThereAContact()){
             app.getContactHelper().initializationNewContact();
             app.getContactHelper().fillInfoNewContact(new ContactData("Раз", "Kek", "88005553535", "omega_pepega@mail.com"));
             app.getContactHelper().confirmNewContact();
