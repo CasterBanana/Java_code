@@ -1,10 +1,16 @@
 package ru.kruto.addressbook.tests;
 
-import org.testng.Assert;
+
+
 import org.testng.annotations.Test;
 import ru.kruto.addressbook.model.GroupData;
+import ru.kruto.addressbook.model.Groups;
 
-import java.util.Set;
+
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class GroupCreationTests extends TestBase { // Теперь это наследник класса TestBase
 
@@ -12,16 +18,14 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
   @Test
   public void testGroupCreation()  { // не стоит называть метод, как класс
     app.goTo().groupPage();
-    Set<GroupData> before = app.group().all();
+    Groups before = app.group().all();
     GroupData group = new GroupData().withGroupName("Test1");
     app.group().create(group);//это из GroupHelper теперь
-    Set<GroupData> after = app.group().all();
-    Assert.assertEquals(after.size(),before.size() + 1);
+    Groups after = app.group().all();
+    assertThat(after.size(),equalTo(before.size() + 1));
+    assertThat(after, equalTo
+            (before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
 
-
-    group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
-    before.add(group);
-    Assert.assertEquals(before ,after);
   }
 
 }
