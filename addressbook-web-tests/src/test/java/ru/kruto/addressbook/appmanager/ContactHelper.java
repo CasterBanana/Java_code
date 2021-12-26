@@ -41,6 +41,7 @@ public class ContactHelper extends HelperBase {
         initializationNewContact();
         fillInfoNewContact(contact);
         confirmNewContact();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -48,6 +49,7 @@ public class ContactHelper extends HelperBase {
         initializationEditContactById(contact.getId());
         editContact(contact);
         safeUpdateContact();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -55,6 +57,7 @@ public class ContactHelper extends HelperBase {
         selectContact(index);
         deleteButton();
         getAcceptContact(); // подтверждение для всплыващющего окна
+        contactCache = null;
         openHome();
     }
 
@@ -168,8 +171,13 @@ public class ContactHelper extends HelperBase {
         return  contacts;
     }
 
+    private Contacts contactCache = null;
+
     public Contacts all() {
-        Contacts contacts = new Contacts();
+        if(contactCache != null){
+            return new Contacts(contactCache);
+        }
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name = 'entry']"));
         for (WebElement element : elements){
             //String firstName = element.getText();
@@ -181,9 +189,9 @@ public class ContactHelper extends HelperBase {
             //String lastName = element.findElement(By.xpath("//td[2]")).getText();
             String mobilePhone = element.findElement(By.xpath("//td[6]")).getText();
             String eMail = element.findElement(By.tagName("a")).getText();
-            contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName).withMobilePhone(mobilePhone).witheMail(eMail));
+            contactCache.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName).withMobilePhone(mobilePhone).witheMail(eMail));
         }
-        return  contacts;
+        return  contactCache;
     }
 
 
