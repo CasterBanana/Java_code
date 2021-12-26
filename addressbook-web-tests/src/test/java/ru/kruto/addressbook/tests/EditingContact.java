@@ -1,10 +1,18 @@
 package ru.kruto.addressbook.tests;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.kruto.addressbook.model.ContactData;
+import ru.kruto.addressbook.model.Contacts;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 
 public class EditingContact extends TestBase {
@@ -21,22 +29,15 @@ public class EditingContact extends TestBase {
     @Test (enabled = true)
     public void testEditContact() throws Exception { // что-то неправильно отрабатывает предусловие
 
-        List<ContactData> before = app.contact().list();
-        int index = before.size() - 1;
-        ContactData contact = new ContactData().withId(before.get(index).getId())
+        Contacts before = app.contact().all();
+        ContactData modifiedContact = before.iterator().next();
+        ContactData contact = new ContactData().withId(modifiedContact.getId())
                 .withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");
-        app.contact().mofify(index, contact);
-        List<ContactData> after = app.contact().list();
-        Assert.assertEquals(after.size(),before.size());
+        app.contact().mofify(contact);
+        Contacts after = app.contact().all();
+        assertEquals(after.size(),before.size());
 
-
-
-        before.remove(index);
-        before.add(contact);
-        Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
-        before.sort(byId);
-        after.sort(byId);
-        Assert.assertEquals(before, after);
+        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
 
     }
 

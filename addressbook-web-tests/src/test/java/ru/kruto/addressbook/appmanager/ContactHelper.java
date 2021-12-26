@@ -5,9 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.kruto.addressbook.model.ContactData;
 import org.openqa.selenium.NoSuchElementException;
+import ru.kruto.addressbook.model.Contacts;
+import ru.kruto.addressbook.model.GroupData;
+import ru.kruto.addressbook.model.Groups;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -28,21 +33,6 @@ public class ContactHelper extends HelperBase {
         fillInformContact(By.name("email"), contactData.getMobilePhone());
     }
 
-    /*public void fillInfoNewContact(String name, String family, String email, String phoneNumber) {
-        wd.findElement(By.name("firstname")).click();
-        wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys(name);
-        wd.findElement(By.name("lastname")).click();
-        wd.findElement(By.name("lastname")).clear();
-        wd.findElement(By.name("lastname")).sendKeys(family);
-        wd.findElement(By.name("mobile")).click();
-        wd.findElement(By.name("mobile")).clear();
-        wd.findElement(By.name("mobile")).sendKeys(email);
-        wd.findElement(By.name("email")).click();
-        wd.findElement(By.name("email")).clear();
-        wd.findElement(By.name("email")).sendKeys(phoneNumber);
-    } */
-
     public void initializationNewContact() {
         enter(By.linkText("add new"));
     }
@@ -54,8 +44,8 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
-    public void mofify(int index, ContactData contact) {
-        initializationEditContact(index);
+    public void mofify(ContactData contact) {
+        initializationEditContactById(contact.getId());
         editContact(contact);
         safeUpdateContact();
         returnToHomePage();
@@ -67,6 +57,15 @@ public class ContactHelper extends HelperBase {
         getAcceptContact(); // подтверждение для всплыващющего окна
         openHome();
     }
+
+    public void delete(ContactData contact) {
+        selectContactById(contact.getId());
+        deleteButton();
+        getAcceptContact(); // подтверждение для всплыващющего окна
+        openHome();
+    }
+
+
 
 
     public void returnToHomePage() {
@@ -86,9 +85,15 @@ public class ContactHelper extends HelperBase {
     }
 
 
-    /*public void editContact(String editFamily) {
-        fillInformContact(By.name("lastname"), editFamily);
-    }*/
+
+    public void initializationEditContactById(int id) { // для редактирования контакта
+        //enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
+        wd.findElement(By.xpath("//a[@href='edit.php?id=" + id + "']")).click();
+        // wd.findElements(By.xpath("img[@alt='Edit']")).get(index).click();
+        //enter (By.xpath("img[@alt='Edit']")); // оставлю, если не будет работать выше
+    }
+
+
 
     public void initializationEditContact(int index) { // для редактирования контакта
         //enter(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
@@ -101,6 +106,13 @@ public class ContactHelper extends HelperBase {
         wd.findElements(By.name("selected[]")).get(index).click();
         //enter(By.name("selected[]")); // оставлю на всякий тоже
     }
+
+    public void selectContactById(int id) { // выбора чекбокса на странице контактов
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+        //enter(By.name("selected[]")); // оставлю на всякий тоже
+    }
+
+
 
     public void deleteButton() { //для удаления контакта
         enter(By.xpath("//input[@value='Delete']"));
@@ -155,4 +167,25 @@ public class ContactHelper extends HelperBase {
         }
         return  contacts;
     }
+
+    public Contacts all() {
+        Contacts contacts = new Contacts();
+        List<WebElement> elements = wd.findElements(By.xpath("//tr[@name = 'entry']"));
+        for (WebElement element : elements){
+            //String firstName = element.getText();
+            List<WebElement> tds = element.findElements(By.xpath(".//td"));
+            String firstName = tds.get(2).getText();
+            String lastName = tds.get(1).getText();
+            //String firstName = element.findElement(By.xpath("//td[3]")).getText();
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            //String lastName = element.findElement(By.xpath("//td[2]")).getText();
+            String mobilePhone = element.findElement(By.xpath("//td[6]")).getText();
+            String eMail = element.findElement(By.tagName("a")).getText();
+            contacts.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName).withMobilePhone(mobilePhone).witheMail(eMail));
+        }
+        return  contacts;
+    }
+
+
+
 }
