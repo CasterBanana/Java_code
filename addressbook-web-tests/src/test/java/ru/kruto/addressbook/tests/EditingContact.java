@@ -32,7 +32,7 @@ public class EditingContact extends TestBase {
         Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData().withId(modifiedContact.getId())
-                .withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");
+                .withFirstName("Test18").withLastName("Raz").withMobilePhone("21233121").witheMail("1231@as.ru");
         app.contact().mofify(contact);
         Contacts after = app.contact().all();
         assertEquals(after.size(),before.size());
