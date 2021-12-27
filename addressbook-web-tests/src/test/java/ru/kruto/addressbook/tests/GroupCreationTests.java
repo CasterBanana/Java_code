@@ -21,11 +21,25 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
     Groups before = app.group().all();
     GroupData group = new GroupData().withGroupName("Test1");
     app.group().create(group);//это из GroupHelper теперь
+    assertThat(app.group().count(),equalTo(before.size() + 1));
     Groups after = app.group().all();
-    assertThat(after.size(),equalTo(before.size() + 1));
     assertThat(after, equalTo
             (before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
 
   }
+  /*@Test
+  public void testBadGroupCreation()  { // не стоит называть метод, как класс
+    app.goTo().groupPage();
+    Groups before = app.group().all();
+    GroupData group = new GroupData().withGroupName("Test1");
+    app.group().create(group);
+    assertThat(app.group().count(), equalTo(before));
+    Groups after = app.group().all();
+    assertThat(after.size(),equalTo(before.size()));
+
+
+  }*/
+
+
 
 }
