@@ -186,13 +186,16 @@ public class ContactHelper extends HelperBase {
             String lastName = tds.get(1).getText();
             //String[] phones = tds.get(5).getText().split("\n");
             String allPhones = tds.get(5).getText();
+            String address = tds.get(3).getText();
+            String allEmails = tds.get(4).getText();
             //String firstName = element.findElement(By.xpath("//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             //String lastName = element.findElement(By.xpath("//td[2]")).getText();
             String mobilePhone = element.findElement(By.xpath("//td[6]")).getText();
             String eMail = element.findElement(By.tagName("a")).getText();
             contactCache.add(new ContactData().withId(id).withFirstName(firstName).withLastName(lastName)
-                    .witheMail(eMail).withAllPhones(allPhones));
+                    .witheMail(eMail).withAllPhones(allPhones).withAllEmails(allEmails)
+                    .withAddress(address));
         }
         return  contactCache;
     }
@@ -202,11 +205,16 @@ public class ContactHelper extends HelperBase {
         initContactModification(contact.getId());
         String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
         String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+        String address = wd.findElement(By.name("address")).getAttribute("value");
         String home = wd.findElement(By.name("home")).getAttribute("value");
         String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
         String work = wd.findElement(By.name("work")).getAttribute("value");
+        String email = wd.findElement(By.name("email")).getAttribute("value");
+        String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+        String email3 = wd.findElement(By.name("email3")).getAttribute("value");
         wd.navigate().back();
-        return new ContactData().withId(contact.getId()).withFirstName(firstname).withLastName(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+        return new ContactData().withId(contact.getId()).withFirstName(firstname).withLastName(lastname).withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).
+                withAddress(address).withEmail(email).withEmail2(email2).withEmail3(email3);
     }
 
     private void initContactModification(int id) {

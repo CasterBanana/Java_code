@@ -10,6 +10,56 @@ public class ContactData {
     private String workPhone;
     private String eMail;
     private String allPhones;
+    private String address;
+    private String email;
+    private String email2;
+    private String email3;
+    private String allEmails;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public ContactData withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public ContactData withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public String getEmail2() {
+        return email2;
+    }
+
+    public ContactData withEmail2(String email2) {
+        this.email2 = email2;
+        return this;
+    }
+
+    public String getEmail3() {
+        return email3;
+    }
+
+    public ContactData withEmail3(String email3) {
+        this.email3 = email3;
+        return this;
+    }
+
+    public String getAllEmails() {
+        return allEmails;
+    }
+
+    public ContactData withAllEmails(String allEmails) {
+        this.allEmails = allEmails;
+        return this;
+    }
 
     public String getAllPhones() {
         return allPhones;

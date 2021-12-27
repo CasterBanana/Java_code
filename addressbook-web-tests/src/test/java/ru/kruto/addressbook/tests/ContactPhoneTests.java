@@ -28,9 +28,15 @@ public class ContactPhoneTests extends TestBase{
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
         assertThat(contact.getAllPhones(), equalTo(mergePhones(contactInfoFromEditForm)));
+        assertThat(contact.getAllEmails(), equalTo(mergeMails(contactInfoFromEditForm)));
+        assertThat(contact.getAddress(), equalTo(mergeAddress(contactInfoFromEditForm)));
         //assertThat(contact.getMobilePhone(), equalTo(cleaned(contactInfoFromEditForm.getMobilePhone())));
         //assertThat(contact.getWorkPhone(), equalTo(cleaned(contactInfoFromEditForm.getWorkPhone())));
     }
+
+
+
+
 
     private String mergePhones(ContactData contact) {
         return Arrays.asList(contact.getHomePhone(),contact.getMobilePhone(),contact.getWorkPhone())
@@ -40,7 +46,31 @@ public class ContactPhoneTests extends TestBase{
 
     }
 
+    private String mergeMails(ContactData contact) {
+        return Arrays.asList(contact.getEmail(), contact.getEmail2(), contact.getEmail3())
+                .stream().filter((s) -> !s.equals(""))
+                .map(ContactPhoneTests::cleanedEmail)
+                .collect(Collectors.joining("\n"));
+    }
+
+    private String mergeAddress(ContactData contact) {
+        return Arrays.asList(contact.getAddress())
+                .stream().filter((s) -> !s.equals(""))
+                .map(ContactPhoneTests::cleanedAddress)
+                .collect(Collectors.joining("\n"));
+    }
+
+
+
     public static String cleaned(String phone){
         return phone.replaceAll("\\s","").replaceAll("[-()]","");
+    }
+
+    public static String cleanedEmail(String email) {
+        return email.replaceAll("\\s", "");
+    }
+
+    public static String cleanedAddress(String address) {
+        return address.replaceAll("\\s", "");
     }
 }
