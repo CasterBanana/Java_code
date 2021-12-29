@@ -8,6 +8,7 @@ public class ContactData {
     private String homePhone;
     private String mobilePhone;
     private String workPhone;
+    private String secondPhone;
     private String eMail;
     private String allPhones;
     private String address;
@@ -70,7 +71,14 @@ public class ContactData {
         return this;
     }
 
+    public String getSecondPhone() {
+        return secondPhone;
+    }
 
+    public ContactData withSecondPhone(String secondPhone) {
+        this.secondPhone = secondPhone;
+        return this;
+    }
 
 
 

@@ -1,11 +1,8 @@
 package ru.kruto.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ru.kruto.addressbook.model.ContactData;
-import ru.kruto.addressbook.model.Contacts;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -13,7 +10,7 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactPhoneTests extends TestBase{
+public class ContactPhoneAddressEmailTests extends TestBase{
     @BeforeTest
     public  void ensurePreconditions(){
         if (app.contact().list().size() == 0){
@@ -23,15 +20,14 @@ public class ContactPhoneTests extends TestBase{
     }
 
     @Test
-    public void testContactPhones(){
+    public void testContactPhonesAddressEmail(){
         ContactData contact = app.contact().all().iterator().next();
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
         assertThat(contact.getAllPhones(), equalTo(mergePhones(contactInfoFromEditForm)));
         assertThat(contact.getAllEmails(), equalTo(mergeMails(contactInfoFromEditForm)));
         assertThat(contact.getAddress(), equalTo(mergeAddress(contactInfoFromEditForm)));
-        //assertThat(contact.getMobilePhone(), equalTo(cleaned(contactInfoFromEditForm.getMobilePhone())));
-        //assertThat(contact.getWorkPhone(), equalTo(cleaned(contactInfoFromEditForm.getWorkPhone())));
+
     }
 
 
@@ -39,31 +35,44 @@ public class ContactPhoneTests extends TestBase{
 
 
     private String mergePhones(ContactData contact) {
-        return Arrays.asList(contact.getHomePhone(),contact.getMobilePhone(),contact.getWorkPhone())
+        return Arrays.asList(contact.getHomePhone(),contact.getMobilePhone(),contact.getWorkPhone(), contact.getSecondPhone())
                 .stream().filter((s) -> ! s.equals(""))
-                .map(ContactPhoneTests::cleaned)
+                .map(ContactPhoneAddressEmailTests::cleaned)
                 .collect(Collectors.joining("\n"));
 
     }
-
     private String mergeMails(ContactData contact) {
         return Arrays.asList(contact.getEmail(), contact.getEmail2(), contact.getEmail3())
                 .stream().filter((s) -> !s.equals(""))
-                .map(ContactPhoneTests::cleanedEmail)
                 .collect(Collectors.joining("\n"));
     }
 
     private String mergeAddress(ContactData contact) {
         return Arrays.asList(contact.getAddress())
                 .stream().filter((s) -> !s.equals(""))
-                .map(ContactPhoneTests::cleanedAddress)
                 .collect(Collectors.joining("\n"));
     }
 
 
 
+  /*  private String mergeMails(ContactData contact) {
+        return Arrays.asList(contact.getEmail(), contact.getEmail2(), contact.getEmail3())
+                .stream().filter((s) -> !s.equals(""))
+                .map(ContactPhoneAddressEmailTests::cleanedEmail)
+                .collect(Collectors.joining("\n"));
+    }
+
+    private String mergeAddress(ContactData contact) {
+        return Arrays.asList(contact.getAddress())
+                .stream().filter((s) -> !s.equals(""))
+                .map(ContactPhoneAddressEmailTests::cleanedAddress)
+                .collect(Collectors.joining("\n"));
+    }*/
+
+
+
     public static String cleaned(String phone){
-        return phone.replaceAll("\\s","").replaceAll("[-()]","");
+        return phone.replaceAll("\\s","").replaceAll("[- ()] ","");
     }
 
     public static String cleanedEmail(String email) {

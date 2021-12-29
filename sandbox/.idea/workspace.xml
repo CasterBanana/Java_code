@@ -97,8 +97,8 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactPhoneTests">
-    <configuration name="ContactPhoneTests" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.ContactPhoneAddressEmailTests">
+    <configuration name="ContactPhoneAddressEmailTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -107,7 +107,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.ContactPhoneTests" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.ContactPhoneAddressEmailTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -185,7 +185,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ContactPhoneTests" />
+        <item itemvalue="TestNG.ContactPhoneAddressEmailTests" />
         <item itemvalue="TestNG.EditingContact" />
         <item itemvalue="TestNG.GroupCreationTests" />
         <item itemvalue="TestNG.CreateNewContact" />
