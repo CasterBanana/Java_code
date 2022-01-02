@@ -31,6 +31,7 @@ public class ContactHelper extends HelperBase {
         fillInformContact(By.name("lastname"), contactData.getLastName());
         fillInformContact(By.name("mobile"), contactData.geteMail());
         fillInformContact(By.name("email"), contactData.getMobilePhone());
+        attach(By.name("photo"), contactData.getPhoto());
     }
 
     public void initializationNewContact() {

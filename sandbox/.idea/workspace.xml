@@ -73,7 +73,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru/kruto/addressbook/tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../addressbook-web-tests" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -97,20 +97,18 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ContactPhoneAddressEmailTests">
-    <configuration name="ContactPhoneAddressEmailTests" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GroupCreationTests.testGroupCreation">
+    <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.generators.GroupDataGenerator" />
       <module name="addressbook-web-tests.test" />
+      <option name="PROGRAM_PARAMETERS" value="-c 10 -f src/test/resources/group.csv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../addressbook-web-tests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
+          <option name="PATTERN" value="ru.kruto.addressbook.generators.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.ContactPhoneAddressEmailTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeleteContact" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateNewContact.testCurrentDir" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -141,25 +139,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.DeleteContact" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EditingContact" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.EditingContact" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.CreateNewContact" />
+      <option name="METHOD_NAME" value="testCurrentDir" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -183,13 +165,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GroupCreationTests.testGroupCreation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.GroupCreationTests" />
+      <option name="METHOD_NAME" value="testGroupCreation" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.GroupDataGenerator" />
+      <item itemvalue="TestNG.CreateNewContact" />
+      <item itemvalue="TestNG.CreateNewContact.testCurrentDir" />
+      <item itemvalue="TestNG.GroupCreationTests" />
+      <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ContactPhoneAddressEmailTests" />
-        <item itemvalue="TestNG.EditingContact" />
+        <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
         <item itemvalue="TestNG.GroupCreationTests" />
+        <item itemvalue="Application.GroupDataGenerator" />
         <item itemvalue="TestNG.CreateNewContact" />
-        <item itemvalue="TestNG.DeleteContact" />
+        <item itemvalue="TestNG.CreateNewContact.testCurrentDir" />
       </list>
     </recent_temporary>
   </component>
@@ -214,6 +221,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="14" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="16" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

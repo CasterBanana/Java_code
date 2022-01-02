@@ -3,6 +3,8 @@ package ru.kruto.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.io.File;
+
 public class HelperBase {
     protected WebDriver wd;
 
@@ -19,10 +21,10 @@ public class HelperBase {
         click(locator);
         if (text != null) {
             String existingText = wd.findElement(locator).getAttribute("value");
-                if(! text.equals(existingText)){
-                    wd.findElement(locator).clear();
-                    wd.findElement(locator).sendKeys(text);
-                }
+            if (!text.equals(existingText)) {
+                wd.findElement(locator).clear();
+                wd.findElement(locator).sendKeys(text);
+            }
 
         }
 
@@ -37,5 +39,13 @@ public class HelperBase {
         enter(firstname);
         wd.findElement(firstname).clear();
         wd.findElement(firstname).sendKeys(text);
+    }
+
+    protected void attach(By locator, File file) {
+        if (file != null) {
+            wd.findElement(locator).sendKeys(file.getAbsolutePath());
+        }
+
+
     }
 }

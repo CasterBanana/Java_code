@@ -8,6 +8,7 @@ import ru.kruto.addressbook.model.ContactData;
 import ru.kruto.addressbook.model.Contacts;
 
 
+import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -23,8 +24,9 @@ public class CreateNewContact extends TestBase {
     @Test (enabled = true)
     public void testCreatenewcontact() throws Exception {
         Contacts before = app.contact().all();
+        File photo = new File("src/test/resources/pngwing.png");
         ContactData contact = new ContactData()
-                .withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");//("Test18", "Raz", "2123", "1231@as.ru")
+                .withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru").withPhoto(photo);//("Test18", "Raz", "2123", "1231@as.ru")
         app.contact().create(contact);
         Contacts after = app.contact().all();
         assertThat(after.size(),equalTo(before.size() + 1));
