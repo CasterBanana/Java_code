@@ -97,7 +97,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GroupCreationTests.testGroupCreation">
+  <component name="RunManager" selected="TestNG.ContactPhoneAddressEmailTests">
     <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.generators.GroupDataGenerator" />
       <module name="addressbook-web-tests.test" />
@@ -113,6 +113,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ContactPhoneAddressEmailTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.ContactPhoneAddressEmailTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CreateNewContact" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -124,24 +141,6 @@
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.CreateNewContact" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateNewContact.testCurrentDir" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.CreateNewContact" />
-      <option name="METHOD_NAME" value="testCurrentDir" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -186,17 +185,17 @@
     <list>
       <item itemvalue="Application.GroupDataGenerator" />
       <item itemvalue="TestNG.CreateNewContact" />
-      <item itemvalue="TestNG.CreateNewContact.testCurrentDir" />
       <item itemvalue="TestNG.GroupCreationTests" />
       <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
+      <item itemvalue="TestNG.ContactPhoneAddressEmailTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
+        <item itemvalue="TestNG.ContactPhoneAddressEmailTests" />
         <item itemvalue="TestNG.GroupCreationTests" />
+        <item itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
         <item itemvalue="Application.GroupDataGenerator" />
         <item itemvalue="TestNG.CreateNewContact" />
-        <item itemvalue="TestNG.CreateNewContact.testCurrentDir" />
       </list>
     </recent_temporary>
   </component>

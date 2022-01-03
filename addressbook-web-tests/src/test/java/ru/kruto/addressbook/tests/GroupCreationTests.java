@@ -8,6 +8,7 @@ import ru.kruto.addressbook.model.GroupData;
 import ru.kruto.addressbook.model.Groups;
 
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,11 +20,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class GroupCreationTests extends TestBase { // Теперь это наследник класса TestBase
 
   @DataProvider
-  public Iterator<Object[]> validGroups () {
+  public Iterator<Object[]> validGroups () throws IOException {
     List<Object[]> list = new ArrayList<Object[]>();
-    list.add(new Object[] {new GroupData().withGroupName("test1").withGroupHeader("header 1").withGroupFooter("footer 1")});
-    list.add(new Object[] {new GroupData().withGroupName("test2").withGroupHeader("header 2").withGroupFooter("footer 2")});
-    list.add(new Object[] {new GroupData().withGroupName("test3").withGroupHeader("header 3").withGroupFooter("footer 3")});
+    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/group.csv")));
+    String line =  reader.readLine();
+    while(line != null){
+      String[] split = line.split(";");
+      list.add(new Object[] {new GroupData().withGroupName(split[0]).withGroupHeader(split[1]).withGroupFooter(split[2])});
+      line = reader.readLine();
+    }
     return list.iterator();
   }
 

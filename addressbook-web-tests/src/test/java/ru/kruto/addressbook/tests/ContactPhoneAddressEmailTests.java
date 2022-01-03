@@ -55,31 +55,11 @@ public class ContactPhoneAddressEmailTests extends TestBase{
 
 
 
-  /*  private String mergeMails(ContactData contact) {
-        return Arrays.asList(contact.getEmail(), contact.getEmail2(), contact.getEmail3())
-                .stream().filter((s) -> !s.equals(""))
-                .map(ContactPhoneAddressEmailTests::cleanedEmail)
-                .collect(Collectors.joining("\n"));
-    }
-
-    private String mergeAddress(ContactData contact) {
-        return Arrays.asList(contact.getAddress())
-                .stream().filter((s) -> !s.equals(""))
-                .map(ContactPhoneAddressEmailTests::cleanedAddress)
-                .collect(Collectors.joining("\n"));
-    }*/
-
 
 
     public static String cleaned(String phone){
-        return phone.replaceAll("\\s","").replaceAll("[- ()] ","");
+        return phone.replaceAll("[-()\\s]","");
     }
 
-    public static String cleanedEmail(String email) {
-        return email.replaceAll("\\s", "");
-    }
 
-    public static String cleanedAddress(String address) {
-        return address.replaceAll("\\s", "");
-    }
 }
