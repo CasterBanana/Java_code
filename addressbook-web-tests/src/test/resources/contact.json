@@ -2,19 +2,21 @@
   {
     "firstName": "FirstName 0",
     "lastName": "LastName 0",
-    "mobilePhone": "mobile 0",
-    "address": "address 0"
+    "mobilePhone": "mobile 0"
   },
   {
     "firstName": "FirstName 1",
     "lastName": "LastName 1",
-    "mobilePhone": "mobile 1",
-    "address": "address 1"
+    "mobilePhone": "mobile 1"
   },
   {
     "firstName": "FirstName 2",
     "lastName": "LastName 2",
-    "mobilePhone": "mobile 2",
-    "address": "address 2"
+    "mobilePhone": "mobile 2"
+  },
+  {
+    "firstName": "FirstName 3",
+    "lastName": "LastName 3",
+    "mobilePhone": "mobile 3"
   }
 ]
