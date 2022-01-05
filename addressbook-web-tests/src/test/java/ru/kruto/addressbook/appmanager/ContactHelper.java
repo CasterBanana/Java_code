@@ -223,4 +223,8 @@ public class ContactHelper extends HelperBase {
     private void initContactModification(int id) {
         wd.findElement(By.xpath("//a[@href='edit.php?id=" + id + "']")).click();
     }
+
+    public int count() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
 }

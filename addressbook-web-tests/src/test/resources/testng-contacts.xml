@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- Тестовый набор для запуска, то есть я тут указал тесты, которые хочу запустить -->
+<suite name="Suite1" verbose="1" >
+    <test name="Contacts">
+        <classes>
+            <class name="ru.kruto.addressbook.tests.CreateNewContact"/>
+            <class name="ru.kruto.addressbook.tests.EditingContact"/>
+            <class name="ru.kruto.addressbook.tests.DeleteContact"/>
+        </classes>
+    </test>
+</suite>
