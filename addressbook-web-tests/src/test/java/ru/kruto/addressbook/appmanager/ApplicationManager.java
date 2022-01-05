@@ -36,7 +36,7 @@ public class ApplicationManager {
     public void init() throws IOException {
         String target = System.getProperty("target", "local");
 
-        properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+        properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties ", target))));
 
 
         if (browser.equals(BrowserType.CHROME)){
@@ -48,7 +48,7 @@ public class ApplicationManager {
         }
         //wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        wd.get(properties.getProperty("web.BaseUrl"));
+        wd.get(properties.getProperty("web.baseUrl"));
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
