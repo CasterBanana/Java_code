@@ -3,24 +3,24 @@
     <firstName>FirstName 0</firstName>
     <lastName>LastName 0</lastName>
     <mobilePhone>mobile 0</mobilePhone>
-    <email>email 0</email>
+    <eMail>email 0</eMail>
   </contact>
   <contact>
     <firstName>FirstName 1</firstName>
     <lastName>LastName 1</lastName>
     <mobilePhone>mobile 1</mobilePhone>
-    <email>email 1</email>
+    <eMail>email 1</eMail>
   </contact>
   <contact>
     <firstName>FirstName 2</firstName>
     <lastName>LastName 2</lastName>
     <mobilePhone>mobile 2</mobilePhone>
-    <email>email 2</email>
+    <eMail>email 2</eMail>
   </contact>
   <contact>
     <firstName>FirstName 3</firstName>
     <lastName>LastName 3</lastName>
     <mobilePhone>mobile 3</mobilePhone>
-    <email>email 3</email>
+    <eMail>email 3</eMail>
   </contact>
 </list>

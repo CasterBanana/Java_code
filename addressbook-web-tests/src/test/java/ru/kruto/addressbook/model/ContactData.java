@@ -18,11 +18,10 @@ public class ContactData {
     private String mobilePhone;
     private String workPhone;
     private String secondPhone;
-    @Expose
-    private String eMail;
     private String allPhones;
     private String address;
-    private String email;
+    @Expose
+    private String eMail;
     private String email2;
     private String email3;
     private String allEmails;
@@ -47,13 +46,9 @@ public class ContactData {
     }
 
     public String getEmail() {
-        return email;
+        return eMail;
     }
 
-    public ContactData withEmail(String email) {
-        this.email = email;
-        return this;
-    }
 
     public String getEmail2() {
         return email2;
@@ -165,9 +160,7 @@ public class ContactData {
 
 
 
-    public String geteMail() {
-        return eMail;
-    }
+
 
 
     @Override

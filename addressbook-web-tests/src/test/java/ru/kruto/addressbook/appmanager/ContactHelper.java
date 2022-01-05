@@ -29,7 +29,7 @@ public class ContactHelper extends HelperBase {
     public void fillInfoNewContact(ContactData contactData) { //
         fillInformContact(By.name("firstname"), contactData.getFirstName());
         fillInformContact(By.name("lastname"), contactData.getLastName());
-        fillInformContact(By.name("email"), contactData.geteMail());
+        fillInformContact(By.name("email"), contactData.getEmail());
         fillInformContact(By.name("mobile"), contactData.getMobilePhone());
         //attach(By.name("photo"), contactData.getPhoto());
     }
@@ -83,7 +83,7 @@ public class ContactHelper extends HelperBase {
     public void editContact(ContactData contactData) {
         type(By.name("lastname"), contactData.getLastName());
         type(By.name("firstname"), contactData.getFirstName());
-        type(By.name("email"), contactData.geteMail());
+        type(By.name("email"), contactData.getEmail());
         type(By.name("mobile"), contactData.getMobilePhone());
         //fillInformContact(By.name("lastname"), editFamily);
     }
@@ -217,7 +217,7 @@ public class ContactHelper extends HelperBase {
         wd.navigate().back();
         return new ContactData().withId(contact.getId()).withFirstName(firstname).withLastName(lastname)
                 .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work).withSecondPhone(secondphone)
-                .withAddress(address).withEmail(email).withEmail2(email2).withEmail3(email3);
+                .withAddress(address).witheMail(email).withEmail2(email2).withEmail3(email3);
     }
 
     private void initContactModification(int id) {

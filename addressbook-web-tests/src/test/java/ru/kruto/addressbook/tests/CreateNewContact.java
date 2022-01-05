@@ -62,7 +62,7 @@ public class CreateNewContact extends TestBase {
 
 
 
-    @Test (enabled = true, dataProvider = "validContactsFromJson")
+    @Test (enabled = true, dataProvider = "validContactsFromXml")
     public void testCreatenewcontact(ContactData contact) throws Exception {
         Contacts before = app.contact().all();
         //File photo = new File("src/test/resources/pngwing.png");

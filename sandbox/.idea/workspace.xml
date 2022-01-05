@@ -97,11 +97,11 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ContactDataGenerator">
+  <component name="RunManager" selected="TestNG.CreateNewContact">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.generators.ContactDataGenerator" />
       <module name="addressbook-web-tests.test" />
-      <option name="PROGRAM_PARAMETERS" value="-c 4 -f src/test/resources/contact.xml -ct xml" />
+      <option name="PROGRAM_PARAMETERS" value="-c 4 -f src/test/resources/contact.json -ct json" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../addressbook-web-tests" />
       <extension name="coverage">
         <pattern>
@@ -188,8 +188,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ContactDataGenerator" />
         <item itemvalue="TestNG.CreateNewContact" />
+        <item itemvalue="Application.ContactDataGenerator" />
         <item itemvalue="Application.GroupDataGenerator" />
         <item itemvalue="TestNG.GroupCreationTests" />
         <item itemvalue="TestNG.ContactPhoneAddressEmailTests" />
