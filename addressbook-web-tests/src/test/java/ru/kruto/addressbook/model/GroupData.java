@@ -26,7 +26,7 @@ public class GroupData {
     private  String groupHeader;
     @Expose
     @Column(name = "group_footer")
-    @T
+    @Type
     private  String groupFooter;
 
 
