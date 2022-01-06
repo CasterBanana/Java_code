@@ -19,7 +19,7 @@ public class EditingContact extends TestBase {
 
     @BeforeTest
     public  void ensurePreconditions(){
-        if (app.contact().list().size() == 0){
+        if (app.db().contacts().size() == 0){
             ContactData contact = new ContactData().withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");
             app.contact().create(contact);
         }
@@ -29,13 +29,13 @@ public class EditingContact extends TestBase {
     @Test (enabled = true)
     public void testEditContact() throws Exception { // что-то неправильно отрабатывает предусловие
 
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData().withId(modifiedContact.getId())
-                .withFirstName("Test18").withLastName("Raz").withMobilePhone("21233121").witheMail("1231@as.ru");
+                .withFirstName("Test18").withLastName("Raz").withMobilePhone("21233121").witheMail("soap@as.ru");
         app.contact().mofify(contact);
         assertThat(app.contact().count(), equalTo(before.size()));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
 
         assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
 

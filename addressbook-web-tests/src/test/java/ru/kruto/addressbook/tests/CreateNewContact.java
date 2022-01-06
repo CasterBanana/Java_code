@@ -68,12 +68,12 @@ public class CreateNewContact extends TestBase {
 
     @Test (enabled = true, dataProvider = "validContactsFromXml")
     public void testCreatenewcontact(ContactData contact) throws Exception {
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         //File photo = new File("src/test/resources/pngwing.png");
         /*ContactData contact = new ContactData()// убрать
                 .withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");//.withPhoto(photo);//("Test18", "Raz", "2123", "1231@as.ru")*/
         app.contact().create(contact);
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after.size(),equalTo(before.size() + 1));
 
         assertThat(after, equalTo
