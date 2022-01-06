@@ -3,17 +3,30 @@ package ru.kruto.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 
 
 @XStreamAlias("group")
+@Entity
+@Table(name = "group_list")
 public class GroupData {
     @XStreamOmitField
+    @Id
+    @Column(name = "group_id")
     private int id = Integer.MAX_VALUE;
     @Expose
+    @Column(name = "group_name")
     private  String groupName;
     @Expose
+    @Column(name = "group_header")
     private  String groupHeader;
     @Expose
+    @Column(name = "group_footer")
+    @T
     private  String groupFooter;
 
 

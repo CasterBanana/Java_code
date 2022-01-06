@@ -1,3 +1,4 @@
+//gradlew -Ptarget=local testContacts.
 package ru.kruto.addressbook.appmanager;
 
 import org.openqa.selenium.By;

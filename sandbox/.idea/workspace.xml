@@ -98,7 +98,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CreateNewContact (1)">
+  <component name="RunManager" selected="TestNG.DbConnectionTest">
     <configuration name="ContactPhoneAddressEmailTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
@@ -217,7 +217,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeleteContact" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DbConnectionTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="addressbook-web-tests.test" />
       <extension name="coverage">
         <pattern>
@@ -226,7 +226,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.DeleteContact" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.DbConnectionTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -253,18 +253,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.EditingContact" />
-      <item itemvalue="TestNG.DeleteContact" />
       <item itemvalue="TestNG.ContactPhoneAddressEmailTests" />
       <item itemvalue="TestNG.CreateNewContact" />
       <item itemvalue="TestNG.CreateNewContact (1)" />
+      <item itemvalue="TestNG.DbConnectionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.DbConnectionTest" />
         <item itemvalue="TestNG.CreateNewContact (1)" />
         <item itemvalue="TestNG.CreateNewContact" />
         <item itemvalue="TestNG.CreateNewContact" />
         <item itemvalue="TestNG.EditingContact" />
-        <item itemvalue="TestNG.DeleteContact" />
       </list>
     </recent_temporary>
   </component>

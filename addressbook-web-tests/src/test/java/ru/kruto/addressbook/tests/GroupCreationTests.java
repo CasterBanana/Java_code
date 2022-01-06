@@ -5,6 +5,8 @@ package ru.kruto.addressbook.tests;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 import org.openqa.selenium.json.TypeToken;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.kruto.addressbook.model.GroupData;
@@ -22,6 +24,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class GroupCreationTests extends TestBase { // Теперь это наследник класса TestBase
+
+  Logger logger = LoggerFactory.getLogger(GroupCreationTests.class);
 
   @DataProvider
   public Iterator<Object[]> validGroupsFromXml () throws IOException {
@@ -58,6 +62,7 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
 
   @Test(dataProvider = "validGroupsFromJson")
   public void testGroupCreation(GroupData group)  { // не стоит называть метод, как класс
+
     app.goTo().groupPage();
     Groups before = app.group().all();
 
@@ -66,6 +71,8 @@ public class GroupCreationTests extends TestBase { // Теперь это нас
     Groups after = app.group().all();
     assertThat(after, equalTo
             (before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
+
+
 
   }
   /*@Test
