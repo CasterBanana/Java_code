@@ -3,6 +3,8 @@ package ru.kruto.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.kruto.addressbook.model.ContactData;
 import org.openqa.selenium.NoSuchElementException;
 import ru.kruto.addressbook.model.Contacts;
@@ -26,12 +28,22 @@ public class ContactHelper extends HelperBase {
         enter(By.xpath("//div[@id='content']/form/input[21]")); // нижняя кнопка
     }
 
-    public void fillInfoNewContact(ContactData contactData) { //
+    public void fillInfoNewContact(ContactData contactData, boolean creation) { //
         fillInformContact(By.name("firstname"), contactData.getFirstName());
         fillInformContact(By.name("lastname"), contactData.getLastName());
         fillInformContact(By.name("email"), contactData.getEmail());
         fillInformContact(By.name("mobile"), contactData.getMobilePhone());
         //attach(By.name("photo"), contactData.getPhoto());
+        if (creation) {
+            if (contactData.getGroups().size()>0){
+                Assert.assertTrue(contactData.getGroups().size() == 1);
+                new Select(wd.findElement(By.name("new_group"))).
+                        selectByVisibleText(contactData.getGroups().iterator().next().getGroupName());
+            }
+
+        } else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
     }
 
     public void initializationNewContact() {
@@ -40,7 +52,7 @@ public class ContactHelper extends HelperBase {
 
     public void create(ContactData contact) {
         initializationNewContact();
-        fillInfoNewContact(contact);
+        fillInfoNewContact(contact, true);
         confirmNewContact();
         contactCache = null;
         returnToHomePage();
@@ -199,6 +211,38 @@ public class ContactHelper extends HelperBase {
                     .withAddress(address));
         }
         return new Contacts(contactCache);
+    }
+
+    public void ContactInGroup(ContactData contact) {
+        initContactCheckbox(contact.getId());
+        contactCache = null;
+        returnToContactPage();
+    }
+
+    public void deleteContactGroup(ContactData contact, GroupData group){
+        ContactDeletedGroup(group);
+        selectContactById(contact.getId());
+        initContactDelete();
+    }
+    public void initContactDelete(){
+        wd.findElement(By.xpath("//input[@name='remove']")).click();
+    }
+
+    public void ContactDeletedGroup(GroupData group){
+        new Select(wd.findElement(By.xpath("//select[@name='group']"))).selectByValue(String.valueOf(group.getId()));
+    }
+
+
+    public void returnToContactPage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home"));
+    }
+
+    public void initContactCheckbox(int id) {
+        wd.findElement(By.xpath("//input[@id="+ id +"]")).click();
+        wd.findElement(By.xpath("//input[@value='Add to']")).click();
     }
 
 

@@ -10,6 +10,7 @@ import org.testng.annotations.*;
 import ru.kruto.addressbook.model.ContactData;
 import ru.kruto.addressbook.model.Contacts;
 import ru.kruto.addressbook.model.GroupData;
+import ru.kruto.addressbook.model.Groups;
 
 
 import java.io.BufferedReader;
@@ -68,16 +69,36 @@ public class CreateNewContact extends TestBase {
 
     @Test (enabled = true, dataProvider = "validContactsFromXml")
     public void testCreatenewcontact(ContactData contact) throws Exception {
+        //Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         //File photo = new File("src/test/resources/pngwing.png");
         /*ContactData contact = new ContactData()// убрать
                 .withFirstName("Test18").withLastName("Raz").withMobilePhone("2123").witheMail("1231@as.ru");//.withPhoto(photo);//("Test18", "Raz", "2123", "1231@as.ru")*/
         app.contact().create(contact);
+        assertThat(app.contact().count(),equalTo(before.size() + 1));
         Contacts after = app.db().contacts();
-        assertThat(after.size(),equalTo(before.size() + 1));
+
 
         assertThat(after, equalTo
                 (before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+        verifyContactListInUI();
+    }
+
+    @Test
+    public void testContactInGroups(){
+        Groups groups = app.db().groups();
+        //File photo = new File("src/test/resources/pngwing.png");
+        ContactData contact = new ContactData()// убрать
+                .withFirstName("Test18")
+                .withLastName("Raz")
+                .withMobilePhone("2123")
+                .witheMail("1231@as.ru")
+                .inGroup(groups.iterator().next());
+        app.contact().initializationNewContact();
+        app.contact().fillInfoNewContact(contact, true);
+        app.contact().confirmNewContact();
+        app.contact().returnToHomePage();
+
     }
 
 

@@ -13,4 +13,15 @@ public class NavigationHelper extends HelperBase {
     public void groupPage() {
         click(By.linkText("groups"));
     }
+
+    public void ContactMDPage() {
+        if (isElementPresen(By.tagName("h1"))
+                && wd.findElement(By.tagName("h1")).getText().equals("home")
+                && isElementPresen(By.name("Edit"))){
+            return;
+        }
+        click(By.linkText("home"));
+    }
+
+
 }

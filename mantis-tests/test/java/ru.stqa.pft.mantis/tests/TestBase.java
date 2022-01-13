@@ -1,4 +1,4 @@
-package ru.kruto.addressbook.tests;
+package ru.stqa.pft.mantis.tests;
 
 //import org.openqa.selenium.remote.Browser;
 import org.hamcrest.CoreMatchers;
@@ -24,7 +24,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class TestBase {
-    Logger logger = LoggerFactory.getLogger(TestBase.class);
+    //Logger logger = LoggerFactory.getLogger(TestBase.class);
 
 
     protected static final ApplicationManager app
@@ -41,6 +41,7 @@ public class TestBase {
     public void tearDown() throws Exception {
         app.stop();
     }
+    /*
     @BeforeMethod
     public void logTestStart (Method m, Object[] p){
         logger.info("Start test " + m.getName() + " with parameters " + Arrays.asList(p));
@@ -75,6 +76,6 @@ public class TestBase {
         }
 
 
-    }
+    }*/
 
 }
