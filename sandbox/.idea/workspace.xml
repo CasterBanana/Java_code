@@ -30,6 +30,9 @@
         <task path="$PROJECT_DIR$/../addressbook-web-tests">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/../mantis-tests">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -40,6 +43,15 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="addressbook-web-tests" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mantis-tests" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mantis-tests" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
@@ -76,6 +88,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mantis-tests/test/java/ru.stqa.pft.mantis/appmanager" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -95,6 +108,9 @@
       <recent name="C:\RepositoryJava\Java_code\mantis-tests\test\resources" />
       <recent name="C:\RepositoryJava\Java_code\mantis-tests" />
       <recent name="C:\RepositoryJava\Java_code\addressbook-web-tests\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\RepositoryJava\Java_code\mantis-tests\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.kruto.addressbook.tests" />
