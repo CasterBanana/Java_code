@@ -110,7 +110,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTests">
+  <component name="RunManager" selected="TestNG.RegistrationTests">
     <configuration name="RegistrationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -202,16 +202,16 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.RegistrationTests" />
       <item itemvalue="TestNG.CreateNewContact.testCreatenewcontact" />
       <item itemvalue="TestNG.ContactsInGroups" />
-      <item itemvalue="Gradle.RegistrationTests" />
       <item itemvalue="TestNG.RegistrationTests" />
       <item itemvalue="TestNG.LoginTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTests" />
         <item itemvalue="TestNG.RegistrationTests" />
+        <item itemvalue="TestNG.LoginTests" />
         <item itemvalue="Gradle.RegistrationTests" />
         <item itemvalue="TestNG.ContactsInGroups" />
         <item itemvalue="TestNG.CreateNewContact.testCreatenewcontact" />
@@ -244,6 +244,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="16" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../mantis-tests/src/test/java/ru.stqa.pft.mantis/tests/RegistrationTests.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
