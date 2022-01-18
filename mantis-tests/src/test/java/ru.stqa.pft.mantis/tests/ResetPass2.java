@@ -26,10 +26,10 @@ public class ResetPass2 extends TestBase{
         app.registration().ResetPassword();// порядок
 
         String email = String.format("user1642406378885@localhost");
-        List<MailMessage> mailMessages = app.james().waitForMail("user1642406378885","password", 60000);
+        List<MailMessage> mailMessages = app.mail().waitForMail(1, 60000);
         String confirmationLink = findConfirmationLink(mailMessages, email);
         String user = String.format("user1642406378885");
-        String password = "111";
+        String password = "azaza";
         app.registration().finish(confirmationLink, user, password);
         app.registration().userAutorization(user, password);
         assertTrue(app.newSession().login(user, password));
