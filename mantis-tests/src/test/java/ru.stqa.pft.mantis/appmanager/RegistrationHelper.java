@@ -20,12 +20,41 @@ public class RegistrationHelper extends HelperBase {
 
     }
 
-    public void finish(String confirmationLink, String password) {
+    public void finish(String confirmationLink,String user, String password ) {
         wd.get(confirmationLink);
+        type(By.name("realname"), user);
         type(By.name("password"), password);
         type(By.name("password_confirm"), password);
         //click(By.cssSelector("input[value='Изменить учетную запись']"));
-        click(By.cssSelector("input[value='Update User']"));
+        click(By.xpath("//*[@id=\"account-update-form\"]/fieldset/span/button"));
 
+    }
+
+    public void adminEnter(String username, String password){
+        wd.get(app.getProperty("web.baseUrl") + "/login_page.php");
+        type(By.name("username"), username);
+        click(By.cssSelector("input[value='Вход']"));
+        type(By.name("password"), password);
+        click(By.cssSelector("input[value='Вход']"));
+    }
+
+    public void userAutorization(String username, String password){
+        wd.get(app.getProperty("web.baseUrl") + "/login_page.php");
+        type(By.name("username"), username);
+        type(By.name("password"), password);
+        click(By.cssSelector("input[value='Вход']"));
+
+    }
+
+
+
+    public void goToUserPage(){
+        wd.get(app.getProperty("web.baseUrl") + "/manage_user_page.php");
+
+    }
+
+    public void ResetPassword(){
+        wd.get(app.getProperty("web.baseUrl") + "/manage_user_edit_page.php?user_id=2");
+        click(By.xpath("input[value='Сбросить пароль']"));
     }
 }

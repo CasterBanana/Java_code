@@ -110,7 +110,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RegistrationTests">
+  <component name="RunManager" selected="TestNG.ResetPass2">
     <configuration name="RegistrationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -143,24 +143,6 @@
       <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.ContactsInGroups" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateNewContact.testCreatenewcontact" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.kruto.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.kruto.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.kruto.addressbook.tests.CreateNewContact" />
-      <option name="METHOD_NAME" value="testCreatenewcontact" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -201,20 +183,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ResetPass2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mantis-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.pft.mantis.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.pft.mantis.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.mantis.tests.ResetPass2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Gradle.RegistrationTests" />
-      <item itemvalue="TestNG.CreateNewContact.testCreatenewcontact" />
       <item itemvalue="TestNG.ContactsInGroups" />
       <item itemvalue="TestNG.RegistrationTests" />
       <item itemvalue="TestNG.LoginTests" />
+      <item itemvalue="TestNG.ResetPass2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ResetPass2" />
         <item itemvalue="TestNG.RegistrationTests" />
         <item itemvalue="TestNG.LoginTests" />
         <item itemvalue="Gradle.RegistrationTests" />
         <item itemvalue="TestNG.ContactsInGroups" />
-        <item itemvalue="TestNG.CreateNewContact.testCreatenewcontact" />
       </list>
     </recent_temporary>
   </component>
