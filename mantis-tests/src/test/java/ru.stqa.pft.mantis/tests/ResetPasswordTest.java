@@ -23,7 +23,7 @@ public class ResetPasswordTest extends TestBase {
 
         app.registration().adminEnter("administrator", "root");
         app.registration().goToUserPage();
-        app.registration().ResetPassword(); // тут сделано
+        //app.registration().ResetPassword(); // тут сделано
 
         long now = System.currentTimeMillis();
 

@@ -53,9 +53,10 @@ public class RegistrationHelper extends HelperBase {
 
     }
 
-    public void ResetPassword(){
-        wd.get(app.getProperty("web.baseUrl") + "/manage_user_edit_page.php?user_id=2");
-        click(By.cssSelector("input[value='Сбросить пароль']"));
+    public void ResetPassword(String username){
+        wd.get(app.getProperty("web.baseUrl") + "/manage_user_page.php");
+        click(By.linkText(username));
+        click(By.cssSelector("input[value='Сбросить пароль']"));// не жмакает на кнопку, сволота
         //click(By.xpath("input[value='Сбросить пароль']"));
     }
 }
