@@ -1,0 +1,8 @@
+18:58:00.260 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Start test testCreateIssue with parameters []
+18:58:00.639 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Stop test testCreateIssue with parameters []
+18:58:00.640 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Start test testGetIssues with parameters []
+18:58:00.654 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Stop test testGetIssues with parameters []
+18:58:00.654 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Start test testGetProjects with parameters []
+18:58:00.664 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Stop test testGetProjects with parameters []
+18:58:00.664 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Start test testGetStatusIssue with parameters []
+18:58:00.673 [main] INFO  ru.stqa.pft.mantis.tests.TestBase - Stop test testGetStatusIssue with parameters []

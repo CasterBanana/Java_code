@@ -1,3 +1,0 @@
-21:11:17.441 [main] INFO  o.s.smtp.server.SMTPServer - SMTP server *:25 starting
-21:11:17.445 [org.subethamail.smtp.server.ServerThread *:25] INFO  o.s.smtp.server.ServerThread - SMTP server *:25 started
-21:11:17.508 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.33
