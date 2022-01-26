@@ -120,49 +120,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.RestAssuredTests">
-    <configuration name="RestTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../rest-sample" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.rest.RestTests&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="RestTests.testCreateIssue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../rest-sample" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.rest.RestTests.testCreateIssue&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="TestNG.SquareTests">
     <configuration name="GithubTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="github-sample.test" />
       <extension name="coverage">
@@ -173,6 +131,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.stqa.pft.github" />
       <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.github.GithubTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PointTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sandbox.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.kruto.sandbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.kruto.sandbox" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.sandbox.PointTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -214,20 +189,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SquareTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sandbox.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.kruto.sandbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.kruto.sandbox" />
+      <option name="MAIN_CLASS_NAME" value="ru.kruto.sandbox.SquareTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Gradle.RestTests" />
-      <item itemvalue="Gradle.RestTests.testCreateIssue" />
       <item itemvalue="TestNG.RestTests" />
       <item itemvalue="TestNG.GithubTests" />
       <item itemvalue="TestNG.RestAssuredTests" />
+      <item itemvalue="TestNG.PointTests" />
+      <item itemvalue="TestNG.SquareTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SquareTests" />
+        <item itemvalue="TestNG.PointTests" />
         <item itemvalue="TestNG.RestAssuredTests" />
         <item itemvalue="TestNG.GithubTests" />
         <item itemvalue="TestNG.RestTests" />
-        <item itemvalue="Gradle.RestTests" />
-        <item itemvalue="Gradle.RestTests.testCreateIssue" />
       </list>
     </recent_temporary>
   </component>
