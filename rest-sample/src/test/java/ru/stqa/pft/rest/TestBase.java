@@ -39,3 +39,4 @@ public class TestBase {
             throw new SkipException("Ignored because of issue " + issueId);
         }
     }
+}

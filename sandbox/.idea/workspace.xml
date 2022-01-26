@@ -120,7 +120,7 @@
       <recent name="ru.kruto.sandbox" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.GithubTests">
+  <component name="RunManager" selected="TestNG.RestAssuredTests">
     <configuration name="RestTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -180,6 +180,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RestAssuredTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="rest-sample.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.pft.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.pft.rest" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.rest.RestAssuredTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="rest-sample.test" />
       <extension name="coverage">
@@ -197,38 +214,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoapTests.testGetStatusIssue" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mantis-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.pft.mantis.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.pft.mantis.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.mantis.tests.SoapTests" />
-      <option name="METHOD_NAME" value="testGetStatusIssue" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Gradle.RestTests" />
       <item itemvalue="Gradle.RestTests.testCreateIssue" />
-      <item itemvalue="TestNG.SoapTests.testGetStatusIssue" />
       <item itemvalue="TestNG.RestTests" />
       <item itemvalue="TestNG.GithubTests" />
+      <item itemvalue="TestNG.RestAssuredTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RestAssuredTests" />
         <item itemvalue="TestNG.GithubTests" />
         <item itemvalue="TestNG.RestTests" />
         <item itemvalue="Gradle.RestTests" />
         <item itemvalue="Gradle.RestTests.testCreateIssue" />
-        <item itemvalue="TestNG.SoapTests.testGetStatusIssue" />
       </list>
     </recent_temporary>
   </component>
